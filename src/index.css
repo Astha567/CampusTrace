@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+@theme {
+  --color-palette-rose: #FFCED8;
+  --color-palette-blush: #FFDDDD;
+  --color-palette-cream: #FFF4DE;
+  --color-palette-peach: #FFE8C4;
+
+  --color-brand-primary: #D94A6E;
+  --color-brand-primary-hover: #BF3659;
+  --color-brand-primary-dark: #A62545;
+  --color-brand-surface: #FFF9F2;
+  --color-brand-card: #FFFFFF;
+  --color-brand-border: #FFCED8;
+  --color-brand-peach: #FFE8C4;
+  --color-brand-cream: #FFF4DE;
+}
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+}
+
+/* Custom scrollbars with palette */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(224, 78, 111, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(224, 78, 111, 0.45);
+}
+
+/* Hide scrollbar for clean horizontal shelves */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

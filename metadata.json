@@ -1,0 +1,6 @@
+{
+  "name": "Everywhere Door - Campus Guide",
+  "description": "Everywhere Door (CampusTrace) by Team Offshore: An accessible, student-friendly digital guide to university life with interactive campus maps, event hub, calendar reminders, verified contacts, and AI assistant.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
