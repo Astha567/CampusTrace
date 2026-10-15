@@ -38,15 +38,6 @@ export const HomePage: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   const [buildings, setBuildings] = useState<Building[]>([]);
-    const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setShowSplash(false);
-    }, 3000);
-
-    return () => window.clearTimeout(timer);
-  }, []);
 
   useEffect(() => {
     dataService.getEvents().then(setEvents);
@@ -91,54 +82,6 @@ export const HomePage: React.FC = () => {
   const savedEventsList = events.filter((e) =>
     savedItems.some((s) => s.eventId === e.id)
   );
-
-    if (showSplash) {
-    return (
-      <div
-        onClick={() => setShowSplash(false)}
-        className="fixed inset-0 z-[100] flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#FFF5D6] via-[#F3D3C9] to-[#ECC0C2] dark:from-[#250D17] dark:via-[#65152D] dark:to-[#180912] px-6 text-center cursor-pointer select-none transition-colors"
-      >
-        {/* Animated glowing orbs */}
-        <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 animate-pulse rounded-full bg-[#D94A6E]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 animate-pulse rounded-full bg-[#F3D3C9]/40 dark:bg-[#F3D3C9]/20 blur-3xl" />
-
-        <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6">
-          <div className="flex h-24 w-24 animate-pulse items-center justify-center rounded-full border border-[#D94A6E]/30 dark:border-[#F3D3C9]/50 bg-white/40 dark:bg-white/10 shadow-[0_0_60px_rgba(242,180,192,0.35)] backdrop-blur-md">
-            <Sparkles className="h-12 w-12 text-[#D94A6E] dark:text-[#F3D3C9]" />
-          </div>
-
-          <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8C203B] dark:text-[#F2B4C0]">
-            Team Offshore Presents
-          </p>
-
-          <h1 className="text-4xl font-extrabold tracking-tight text-[#2D1F25] dark:text-[#FBEEBF] sm:text-6xl">
-            Welcome to
-            <span className="mt-2 block bg-gradient-to-r from-[#D94A6E] via-[#BF3659] to-[#8C203B] dark:from-[#F2B4C0] dark:via-[#F3D3C9] dark:to-white bg-clip-text text-transparent">
-              CampusTrace
-            </span>
-          </h1>
-
-          <p className="max-w-lg text-sm leading-7 text-[#5C454F] dark:text-[#F5DCE5] sm:text-base font-medium">
-            Your campus. Your community. Everything in one place.
-            Discover classrooms, explore events, and find your way around campus.
-          </p>
-
-          <div className="mt-3 flex items-center gap-3">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#D94A6E] dark:bg-[#F3D3C9]" />
-            <span className="text-xs font-semibold tracking-widest text-[#8C203B] dark:text-[#F2B4C0]">
-              PREPARING YOUR CAMPUS EXPERIENCE
-            </span>
-          </div>
-
-          <div className="mt-2 h-1.5 w-48 overflow-hidden rounded-full bg-[#2D1F25]/10 dark:bg-white/15">
-            <div className="h-full w-full origin-left animate-pulse rounded-full bg-gradient-to-r from-[#D94A6E] via-[#F3D3C9] to-[#F2B4C0]" />
-          </div>
-
-          <span className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-1">Tap anywhere to enter</span>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="space-y-8 pb-16"> 
