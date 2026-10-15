@@ -42,7 +42,12 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Brand */}
         <button
-          onClick={() => setActiveTab('home')}
+          onClick={() => {
+            setActiveTab('home');
+            if (typeof window !== 'undefined' && window.location.pathname !== '/home') {
+              window.history.pushState(null, '', '/home');
+            }
+          }}
           className="flex items-center gap-2.5 text-left group focus-visible:ring-2 focus-visible:ring-[#D94A6E] rounded-xl p-1"
         >
           <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#D94A6E] via-[#F2B4C0] to-[#F3D3C9] text-[#4A1422] flex items-center justify-center shadow-md shadow-[#D94A6E]/20 group-hover:scale-105 transition-transform">
