@@ -38,6 +38,15 @@ export const HomePage: React.FC = () => {
   const [isSearching, setIsSearching] = useState(false);
   const [events, setEvents] = useState<Event[]>([]);
   const [buildings, setBuildings] = useState<Building[]>([]);
+    const [showSplash, setShowSplash] = useState(true);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      setShowSplash(false);
+    }, 3000);
+
+    return () => window.clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     dataService.getEvents().then(setEvents);
@@ -83,8 +92,51 @@ export const HomePage: React.FC = () => {
     savedItems.some((s) => s.eventId === e.id)
   );
 
+    if (showSplash) {
+    return (
+      <div className="fixed inset-0 z-[100] flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#250D17] via-[#65152D] to-[#180912] px-6 text-center">
+        {/* Animated glowing orbs */}
+        <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 animate-pulse rounded-full bg-[#D94A6E]/30 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 animate-pulse rounded-full bg-[#FFE8C4]/20 blur-3xl" />
+
+        <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6">
+          <div className="flex h-24 w-24 animate-pulse items-center justify-center rounded-full border border-[#FFE8C4]/50 bg-white/10 shadow-[0_0_60px_rgba(255,206,216,0.25)] backdrop-blur-md">
+            <Sparkles className="h-12 w-12 text-[#FFE8C4]" />
+          </div>
+
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#FFCED8]">
+            Team Offshore Presents
+          </p>
+
+          <h1 className="text-4xl font-extrabold tracking-tight text-[#FFF4DE] sm:text-6xl">
+            Welcome to
+            <span className="mt-2 block bg-gradient-to-r from-[#FFCED8] via-[#FFE8C4] to-white bg-clip-text text-transparent">
+              CampusTrace
+            </span>
+          </h1>
+
+          <p className="max-w-lg text-sm leading-7 text-[#F5DCE5] sm:text-base">
+            Your campus. Your community. Everything in one place.
+            Discover classrooms, explore events, and find your way around campus.
+          </p>
+
+          <div className="mt-3 flex items-center gap-3">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[#FFE8C4]" />
+            <span className="text-xs font-medium tracking-widest text-[#FFCED8]">
+              PREPARING YOUR CAMPUS EXPERIENCE
+            </span>
+          </div>
+
+          <div className="mt-2 h-1.5 w-48 overflow-hidden rounded-full bg-white/15">
+            <div className="h-full w-full origin-left animate-pulse rounded-full bg-gradient-to-r from-[#D94A6E] via-[#FFE8C4] to-[#FFCED8]" />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-8 pb-16"> 
       {/* Hero Section styled with Palette */}
       <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#8C1E37] via-[#C73356] to-[#42111E] text-white p-6 sm:p-10 shadow-xl border border-[#FFCED8]/40">
         {/* Luminous Glow Orbs from palette */}
