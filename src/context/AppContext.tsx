@@ -4,6 +4,8 @@ import { dataService } from '../services/dataService';
 
 export type TabType = 'home' | 'map' | 'events' | 'calendar' | 'assistant' | 'contacts' | 'admin' | 'about';
 
+export type ThemeMode = 'light' | 'dark';
+
 interface ReportModalState {
   isOpen: boolean;
   targetType: ReportTargetType;
@@ -25,6 +27,9 @@ interface AppContextType {
   isEventSaved: (eventId: string) => boolean;
   savedItems: SavedItem[];
   updateReminderSetting: (eventId: string, setting: SavedItem['reminderSetting']) => void;
+  theme: ThemeMode;
+  setTheme: (theme: ThemeMode) => void;
+  toggleTheme: () => void;
   isDarkMode: boolean;
   toggleDarkMode: () => void;
   showOnboarding: boolean;
@@ -65,18 +70,30 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     }
   });
 
-  // Dark mode persistence
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
+  // Theme mode persistence (light: Figma Pastel Pink, dark: Warm Dark Plum)
+  const [theme, setTheme] = useState<ThemeMode>(() => {
     try {
-      const saved =
+      const savedTheme = localStorage.getItem('campustrace_theme');
+      if (savedTheme === 'light' || savedTheme === 'dark') return savedTheme;
+      const savedDark =
         localStorage.getItem('campustrace_dark_mode') ??
         localStorage.getItem('everywhere_door_dark_mode');
-      if (saved !== null) return JSON.parse(saved);
-      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (savedDark !== null) return JSON.parse(savedDark) ? 'dark' : 'light';
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches
+        ? 'dark'
+        : 'light';
     } catch {
-      return false;
+      return 'light';
     }
   });
+
+  const isDarkMode = theme === 'dark';
+
+  const toggleTheme = () => {
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
+  };
+
+  const toggleDarkMode = toggleTheme;
 
   // Onboarding persistence
   const [showOnboarding, setShowOnboarding] = useState<boolean>(() => {
@@ -109,19 +126,25 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   useEffect(() => {
     try {
-      localStorage.setItem('campustrace_dark_mode', JSON.stringify(isDarkMode));
+      localStorage.setItem('campustrace_theme', theme);
+      localStorage.setItem('campustrace_dark_mode', JSON.stringify(theme === 'dark'));
     } catch (e) {
       console.warn('Could not save theme preference', e);
     }
 
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
+    const root = document.documentElement;
+    if (theme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+      root.setAttribute('data-theme', 'dark');
+      root.style.colorScheme = 'dark';
     } else {
-      document.documentElement.classList.remove('dark');
+      root.classList.remove('dark');
+      root.classList.add('light');
+      root.setAttribute('data-theme', 'light');
+      root.style.colorScheme = 'light';
     }
-  }, [isDarkMode]);
-
-  const toggleDarkMode = () => setIsDarkMode((prev) => !prev);
+  }, [theme]);
 
   const toggleSaveEvent = (eventId: string) => {
     setSavedItems((prev) => {
@@ -205,6 +228,9 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
         isEventSaved,
         savedItems,
         updateReminderSetting,
+        theme,
+        setTheme,
+        toggleTheme,
         isDarkMode,
         toggleDarkMode,
         showOnboarding,

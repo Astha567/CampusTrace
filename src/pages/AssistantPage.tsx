@@ -120,10 +120,10 @@ export const AssistantPage: React.FC = () => {
       <div className="flex items-center justify-between">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               CampusTrace AI Assistant
             </h1>
-            <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8]">
+            <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0]">
               <ShieldCheck className="w-3 h-3 text-[#D94A6E]" />
               Grounded Retrieval
             </span>
@@ -144,7 +144,7 @@ export const AssistantPage: React.FC = () => {
               },
             ])
           }
-          className="p-2 text-[#8F7580] hover:text-[#2D1F25] rounded-xl hover:bg-[#FFF4DE] transition"
+          className="p-2 text-[#8F7580] hover:text-[#2D1F25] rounded-xl hover:bg-[#FBEEBF] transition"
           title="Reset conversation"
         >
           <RefreshCw className="w-4 h-4" />
@@ -152,7 +152,7 @@ export const AssistantPage: React.FC = () => {
       </div>
 
       {/* Main Chat Feed Box with Palette */}
-      <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] shadow-sm flex flex-col h-[65vh] sm:h-[70vh] overflow-hidden">
+      <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] shadow-sm flex flex-col h-[65vh] sm:h-[70vh] overflow-hidden">
         {/* Messages Scroll Area */}
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-5">
           {messages.map((msg) => {
@@ -163,7 +163,7 @@ export const AssistantPage: React.FC = () => {
                 className={`flex gap-3 ${isUser ? 'justify-end' : 'justify-start'}`}
               >
                 {!isUser && (
-                  <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#D94A6E] via-[#FFCED8] to-[#FFE8C4] text-[#4A1422] flex items-center justify-center shrink-0 shadow-sm mt-1">
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-[#D94A6E] via-[#F2B4C0] to-[#F3D3C9] text-[#4A1422] flex items-center justify-center shrink-0 shadow-sm mt-1">
                     <Sparkles className="w-4 h-4 text-[#5A1527]" />
                   </div>
                 )}
@@ -172,7 +172,7 @@ export const AssistantPage: React.FC = () => {
                   className={`max-w-[85%] sm:max-w-[75%] rounded-3xl p-4 sm:p-5 text-xs sm:text-sm leading-relaxed space-y-3 ${
                     isUser
                       ? 'bg-[#D94A6E] text-white rounded-tr-sm shadow-md shadow-[#D94A6E]/20'
-                      : 'bg-[#FFF9F2] dark:bg-[#2A1F26] text-[#2D1F25] dark:text-[#FFF4DE] rounded-tl-sm border border-[#FFCED8]/70 dark:border-[#422C36]'
+                      : 'bg-[#FFF5D6] dark:bg-[#2A1F26] text-[#2D1F25] dark:text-[#FBEEBF] rounded-tl-sm border border-[#F2B4C0]/70 dark:border-[#422C36]'
                   }`}
                 >
                   <div className="whitespace-pre-line space-y-1">
@@ -181,8 +181,8 @@ export const AssistantPage: React.FC = () => {
 
                   {/* Sources Used Badges */}
                   {!isUser && msg.sourcesUsed && msg.sourcesUsed.length > 0 && (
-                    <div className="pt-2 border-t border-[#FFCED8]/50 dark:border-[#38202A] space-y-1.5">
-                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#8C203B] dark:text-[#FFCED8] flex items-center gap-1">
+                    <div className="pt-2 border-t border-[#F2B4C0]/50 dark:border-[#38202A] space-y-1.5">
+                      <div className="text-[10px] font-bold uppercase tracking-wider text-[#8C203B] dark:text-[#F2B4C0] flex items-center gap-1">
                         <Info className="w-3 h-3 text-[#D94A6E]" />
                         Verified Sources Used:
                       </div>
@@ -191,7 +191,7 @@ export const AssistantPage: React.FC = () => {
                           <button
                             key={i}
                             onClick={() => handleChipClick(source)}
-                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-[#FFF4DE] dark:bg-[#382618] text-[#8C3A00] dark:text-[#FFE8C4] hover:bg-[#FFE8C4] border border-[#FFE8C4] shadow-xs transition"
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-[#FBEEBF] dark:bg-[#382618] text-[#8C3A00] dark:text-[#F3D3C9] hover:bg-[#F3D3C9] border border-[#F3D3C9] shadow-xs transition"
                           >
                             {source.type === 'room' || source.type === 'building' ? (
                               <MapPin className="w-3 h-3 text-[#D94A6E]" />
@@ -235,7 +235,7 @@ export const AssistantPage: React.FC = () => {
 
                   <div
                     className={`text-[10px] text-right font-medium ${
-                      isUser ? 'text-[#FFDDDD]' : 'text-[#8F7580]'
+                      isUser ? 'text-[#ECC0C2]' : 'text-[#8F7580]'
                     }`}
                   >
                     {msg.timestamp}
@@ -249,9 +249,9 @@ export const AssistantPage: React.FC = () => {
           {isLoading && (
             <div className="flex gap-3 justify-start">
               <div className="w-8 h-8 rounded-xl bg-[#D94A6E] text-white flex items-center justify-center shrink-0">
-                <Sparkles className="w-4 h-4 animate-spin text-[#FFE8C4]" />
+                <Sparkles className="w-4 h-4 animate-spin text-[#F3D3C9]" />
               </div>
-              <div className="rounded-3xl rounded-tl-sm p-4 bg-[#FFF9F2] dark:bg-[#2A1F26] border border-[#FFCED8] dark:border-[#422C36] text-xs text-[#7A616B] flex items-center gap-2">
+              <div className="rounded-3xl rounded-tl-sm p-4 bg-[#FFF5D6] dark:bg-[#2A1F26] border border-[#F2B4C0] dark:border-[#422C36] text-xs text-[#7A616B] flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-[#D94A6E] animate-bounce" />
                 <div className="w-2 h-2 rounded-full bg-[#D94A6E] animate-bounce [animation-delay:0.2s]" />
                 <div className="w-2 h-2 rounded-full bg-[#D94A6E] animate-bounce [animation-delay:0.4s]" />
@@ -264,14 +264,14 @@ export const AssistantPage: React.FC = () => {
         </div>
 
         {/* Suggested Prompts Shelf with Palette */}
-        <div className="px-4 py-2 border-t border-[#FFCED8]/50 dark:border-[#38202A] bg-[#FFF9F2] dark:bg-[#1A1217] overflow-x-auto no-scrollbar flex items-center gap-2 text-xs">
-          <span className="text-[11px] font-bold text-[#8C203B] dark:text-[#FFCED8] shrink-0">Try:</span>
+        <div className="px-4 py-2 border-t border-[#F2B4C0]/50 dark:border-[#38202A] bg-[#FFF5D6] dark:bg-[#1A1217] overflow-x-auto no-scrollbar flex items-center gap-2 text-xs">
+          <span className="text-[11px] font-bold text-[#8C203B] dark:text-[#F2B4C0] shrink-0">Try:</span>
           {suggestedPrompts.map((chip, idx) => (
             <button
               key={idx}
               onClick={() => handleSend(chip)}
               disabled={isLoading}
-              className="px-2.5 py-1 rounded-xl bg-white dark:bg-[#261E23] text-[#2D1F25] dark:text-[#FFF4DE] hover:text-[#D94A6E] border border-[#FFCED8] dark:border-[#422C36] shrink-0 transition text-xs font-medium disabled:opacity-50"
+              className="px-2.5 py-1 rounded-xl bg-white dark:bg-[#261E23] text-[#2D1F25] dark:text-[#FBEEBF] hover:text-[#D94A6E] border border-[#F2B4C0] dark:border-[#422C36] shrink-0 transition text-xs font-medium disabled:opacity-50"
             >
               {chip}
             </button>
@@ -279,7 +279,7 @@ export const AssistantPage: React.FC = () => {
         </div>
 
         {/* Input Bar */}
-        <div className="p-3 sm:p-4 bg-white dark:bg-[#20181D] border-t border-[#FFCED8] dark:border-[#422C36] flex items-center gap-2">
+        <div className="p-3 sm:p-4 bg-white dark:bg-[#20181D] border-t border-[#F2B4C0] dark:border-[#422C36] flex items-center gap-2">
           <input
             type="text"
             value={inputPrompt}
@@ -288,7 +288,7 @@ export const AssistantPage: React.FC = () => {
               if (e.key === 'Enter') handleSend();
             }}
             placeholder="Ask a campus question (e.g. 'Where is the library?' or 'What workshops are open?')..."
-            className="flex-1 bg-[#FFF9F2] dark:bg-[#1A1217] rounded-2xl px-4 py-3 text-xs sm:text-sm text-[#2D1F25] dark:text-[#FFF4DE] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] border border-[#FFCED8]/60 transition"
+            className="flex-1 bg-[#FFF5D6] dark:bg-[#1A1217] rounded-2xl px-4 py-3 text-xs sm:text-sm text-[#2D1F25] dark:text-[#FBEEBF] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] border border-[#F2B4C0]/60 transition"
           />
           <button
             onClick={() => handleSend()}

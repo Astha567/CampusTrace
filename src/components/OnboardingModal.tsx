@@ -18,7 +18,7 @@ export const OnboardingModal: React.FC = () => {
       icon: MapPin,
       badge: 'Interactive Campus Map',
       color: 'bg-[#D94A6E] text-white',
-      accentBg: 'bg-[#FFDDDD] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#FFCED8]',
+      accentBg: 'bg-[#ECC0C2] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#F2B4C0]',
     },
     {
       title: 'Stay Ahead of Deadlines & Events',
@@ -28,7 +28,7 @@ export const OnboardingModal: React.FC = () => {
       icon: Calendar,
       badge: 'Deadlines & Calendar',
       color: 'bg-[#E08A38] text-white',
-      accentBg: 'bg-[#FFE8C4] text-[#7A3A00] dark:bg-[#382618] dark:text-[#FFE8C4]',
+      accentBg: 'bg-[#F3D3C9] text-[#7A3A00] dark:bg-[#382618] dark:text-[#F3D3C9]',
     },
     {
       title: 'Ask the Grounded Campus Assistant',
@@ -38,7 +38,7 @@ export const OnboardingModal: React.FC = () => {
       icon: Sparkles,
       badge: 'AI Assistant',
       color: 'bg-[#2A9D8F] text-white',
-      accentBg: 'bg-[#FFF4DE] text-[#2A7268] dark:bg-[#1E302D] dark:text-[#A7D7D0]',
+      accentBg: 'bg-[#FBEEBF] text-[#2A7268] dark:bg-[#1E302D] dark:text-[#A7D7D0]',
     },
   ];
 
@@ -48,7 +48,7 @@ export const OnboardingModal: React.FC = () => {
         particleCount: 80,
         spread: 60,
         origin: { y: 0.7 },
-        colors: ['#FFCED8', '#FFDDDD', '#FFF4DE', '#FFE8C4', '#D94A6E'],
+        colors: ['#F2B4C0', '#ECC0C2', '#FBEEBF', '#F3D3C9', '#D94A6E'],
       });
     } catch {}
     setShowOnboarding(false);
@@ -64,11 +64,11 @@ export const OnboardingModal: React.FC = () => {
       aria-labelledby="onboarding-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2D1F25]/65 backdrop-blur-md animate-in fade-in duration-200"
     >
-      <div className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl max-w-lg w-full border border-[#FFCED8] dark:border-[#422C36] shadow-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between min-h-[440px]">
+      <div className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl max-w-lg w-full border border-[#F2B4C0] dark:border-[#422C36] shadow-2xl p-6 sm:p-8 relative overflow-hidden flex flex-col justify-between min-h-[440px]">
         {/* Top close */}
         <button
           onClick={() => setShowOnboarding(false)}
-          className="absolute top-4 right-4 p-2 text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FFF4DE] rounded-full transition"
+          className="absolute top-4 right-4 p-2 text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FBEEBF] rounded-full transition"
           aria-label="Skip onboarding"
         >
           <X className="w-5 h-5" />
@@ -81,8 +81,8 @@ export const OnboardingModal: React.FC = () => {
               key={idx}
               className={`h-1.5 rounded-full transition-all duration-300 ${
                 idx === currentStep
-                  ? 'w-8 bg-[#D94A6E] dark:bg-[#FFCED8]'
-                  : 'w-2 bg-[#FFDDDD] dark:bg-[#3D1E28]'
+                  ? 'w-8 bg-[#D94A6E] dark:bg-[#F2B4C0]'
+                  : 'w-2 bg-[#ECC0C2] dark:bg-[#3D1E28]'
               }`}
             />
           ))}
@@ -104,10 +104,10 @@ export const OnboardingModal: React.FC = () => {
           </div>
 
           <div>
-            <h2 id="onboarding-title" className="text-xl sm:text-2xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h2 id="onboarding-title" className="text-xl sm:text-2xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               {step.title}
             </h2>
-            <p className="text-xs sm:text-sm font-semibold text-[#D94A6E] dark:text-[#FFCED8] mt-1">
+            <p className="text-xs sm:text-sm font-semibold text-[#D94A6E] dark:text-[#F2B4C0] mt-1">
               {step.subtitle}
             </p>
           </div>
@@ -118,10 +118,10 @@ export const OnboardingModal: React.FC = () => {
         </div>
 
         {/* Bottom controls */}
-        <div className="pt-6 border-t border-[#FFCED8]/60 dark:border-[#38202A] flex items-center justify-between gap-3 mt-6">
+        <div className="pt-6 border-t border-[#F2B4C0]/60 dark:border-[#38202A] flex items-center justify-between gap-3 mt-6">
           <button
             onClick={() => setShowOnboarding(false)}
-            className="text-xs font-semibold text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FFF4DE] transition px-2 py-1"
+            className="text-xs font-semibold text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FBEEBF] transition px-2 py-1"
           >
             Skip Intro
           </button>
@@ -130,7 +130,7 @@ export const OnboardingModal: React.FC = () => {
             {currentStep > 0 && (
               <button
                 onClick={() => setCurrentStep((prev) => prev - 1)}
-                className="px-4 py-2 text-xs font-bold text-[#5C454F] dark:text-[#FFF4DE] bg-[#FFF4DE] dark:bg-[#2A1F26] hover:bg-[#FFE8C4] rounded-xl transition"
+                className="px-4 py-2 text-xs font-bold text-[#5C454F] dark:text-[#FBEEBF] bg-[#FBEEBF] dark:bg-[#2A1F26] hover:bg-[#F3D3C9] rounded-xl transition"
               >
                 Back
               </button>

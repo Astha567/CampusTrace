@@ -38,15 +38,15 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
     containerRef.current.appendChild(renderer.domElement);
 
     // Lighting
-    const ambientLight = new THREE.AmbientLight(0xfff4de, 1.1); // Warm cream ambient
+    const ambientLight = new THREE.AmbientLight(0xfbeeBF, 1.1); // Warm cream ambient
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0xffced8, 2.0); // Soft rose directional
+    const dirLight = new THREE.DirectionalLight(0xf2b4c0, 2.0); // Soft rose directional
     dirLight.position.set(20, 30, 20);
     dirLight.castShadow = true;
     scene.add(dirLight);
 
-    const softLight = new THREE.DirectionalLight(0xffe8c4, 1.4); // Peach accent
+    const softLight = new THREE.DirectionalLight(0xf3d3c9, 1.4); // Peach accent
     softLight.position.set(-20, 15, -15);
     scene.add(softLight);
 
@@ -68,9 +68,9 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
     scene.add(grid);
 
     // Create 3 floors as extruded boxes using the new palette:
-    // Ground: #D94A6E (vibrant coral rose), 1st: #FFCED8 (pastel rose), 2nd: #FFE8C4 (warm peach)
+    // Ground: #D94A6E (vibrant coral rose), 1st: #F2B4C0 (pastel rose), 2nd: #F3D3C9 (warm peach)
     const floorMeshes: THREE.Group[] = [];
-    const floorColors = [0xd94a6e, 0xffced8, 0xffe8c4];
+    const floorColors = [0xd94a6e, 0xf2b4c0, 0xf3d3c9];
 
     for (let i = 0; i < 3; i++) {
       const floorGroup = new THREE.Group();
@@ -92,7 +92,7 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
       // Glass windows strip
       const windowGeo = new THREE.BoxGeometry(12.1, 0.9, 10.1);
       const windowMat = new THREE.MeshStandardMaterial({
-        color: 0xfff4de,
+        color: 0xfbeeBF,
         roughness: 0.1,
         metalness: 0.7,
         transparent: true,
@@ -216,19 +216,19 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
       aria-labelledby="threed-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-[#2D1F25]/80 backdrop-blur-md animate-in fade-in duration-200"
     >
-      <div className="bg-[#20181D] text-[#FFFDF9] rounded-3xl max-w-4xl w-full h-[85vh] border border-[#FFCED8]/30 shadow-2xl flex flex-col overflow-hidden relative">
+      <div className="bg-[#20181D] text-[#FFF5D6] rounded-3xl max-w-4xl w-full h-[85vh] border border-[#F2B4C0]/30 shadow-2xl flex flex-col overflow-hidden relative">
         {/* Header */}
         <div className="p-4 sm:p-5 border-b border-[#38202A] flex items-center justify-between bg-[#20181D]/90 backdrop-blur-sm z-10">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#FFCED8]/20 text-[#FFCED8] flex items-center justify-center border border-[#FFCED8]/30">
+            <div className="w-10 h-10 rounded-xl bg-[#F2B4C0]/20 text-[#F2B4C0] flex items-center justify-center border border-[#F2B4C0]/30">
               <Box className="w-5 h-5" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h3 id="threed-modal-title" className="font-bold text-base sm:text-lg text-[#FFF4DE]">
+                <h3 id="threed-modal-title" className="font-bold text-base sm:text-lg text-[#FBEEBF]">
                   {building.name}
                 </h3>
-                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-[#FFE8C4]/20 text-[#FFE8C4] border border-[#FFE8C4]/30">
+                <span className="px-2 py-0.5 rounded-full text-[10px] font-extrabold uppercase tracking-wide bg-[#F3D3C9]/20 text-[#F3D3C9] border border-[#F3D3C9]/30">
                   3D View (Experimental)
                 </span>
               </div>
@@ -257,8 +257,8 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
               onClick={() => setExploded((prev) => !prev)}
               className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-bold border transition shadow-lg backdrop-blur-md ${
                 exploded
-                  ? 'bg-[#D94A6E] border-[#FFCED8] text-white shadow-[#D94A6E]/30'
-                  : 'bg-[#261E23]/90 border-[#422C36] text-[#FFCED8] hover:bg-[#34262E]'
+                  ? 'bg-[#D94A6E] border-[#F2B4C0] text-white shadow-[#D94A6E]/30'
+                  : 'bg-[#261E23]/90 border-[#422C36] text-[#F2B4C0] hover:bg-[#34262E]'
               }`}
             >
               <Layers className="w-4 h-4" />
@@ -276,10 +276,10 @@ export const ThreeDBuildingModal: React.FC<ThreeDBuildingModalProps> = ({
                   onSelectFloor(floor.level);
                   onClose();
                 }}
-                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#2A1F26] hover:bg-[#D94A6E] text-[#FFF4DE] hover:text-white transition border border-[#422C36] flex items-center gap-1.5"
+                className="px-3 py-1.5 rounded-lg text-xs font-semibold bg-[#2A1F26] hover:bg-[#D94A6E] text-[#FBEEBF] hover:text-white transition border border-[#422C36] flex items-center gap-1.5"
               >
                 <span>{floor.name}</span>
-                <span className="text-[10px] text-[#FFCED8]">({floor.rooms.length} rooms)</span>
+                <span className="text-[10px] text-[#F2B4C0]">({floor.rooms.length} rooms)</span>
               </button>
             ))}
           </div>

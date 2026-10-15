@@ -44,18 +44,18 @@ export const ReportModal: React.FC = () => {
       aria-labelledby="report-modal-title"
       className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2D1F25]/60 backdrop-blur-sm animate-in fade-in duration-200"
     >
-      <div className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl max-w-md w-full border border-[#FFCED8] dark:border-[#422C36] shadow-2xl p-6 relative overflow-hidden">
+      <div className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl max-w-md w-full border border-[#F2B4C0] dark:border-[#422C36] shadow-2xl p-6 relative overflow-hidden">
         {/* Header */}
-        <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/60 dark:border-[#38202A]">
-          <div className="flex items-center gap-2 text-[#D94A6E] dark:text-[#FFCED8]">
+        <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/60 dark:border-[#38202A]">
+          <div className="flex items-center gap-2 text-[#D94A6E] dark:text-[#F2B4C0]">
             <ShieldAlert className="w-5 h-5" />
-            <h3 id="report-modal-title" className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-lg">
+            <h3 id="report-modal-title" className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-lg">
               Report Incorrect Detail
             </h3>
           </div>
           <button
             onClick={closeReportModal}
-            className="p-1 text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FFF4DE] rounded-lg transition"
+            className="p-1 text-[#8F7580] hover:text-[#2D1F25] dark:hover:text-[#FBEEBF] rounded-lg transition"
             aria-label="Close report modal"
           >
             <X className="w-5 h-5" />
@@ -64,10 +64,10 @@ export const ReportModal: React.FC = () => {
 
         {submitted ? (
           <div className="py-8 text-center space-y-3">
-            <div className="w-12 h-12 rounded-full bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] flex items-center justify-center mx-auto">
+            <div className="w-12 h-12 rounded-full bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] flex items-center justify-center mx-auto">
               <CheckCircle2 className="w-7 h-7" />
             </div>
-            <h4 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-base">
+            <h4 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-base">
               Thank You for Keeping CampusTrace Accurate
             </h4>
             <p className="text-xs text-[#7A616B] dark:text-[#BFA5AF] max-w-xs mx-auto">
@@ -77,11 +77,11 @@ export const ReportModal: React.FC = () => {
         ) : (
           <form onSubmit={handleSubmit} className="mt-4 space-y-4">
             {reportModal.targetName && (
-              <div className="bg-[#FFF4DE] dark:bg-[#2A1F26] p-3 rounded-2xl border border-[#FFE8C4] dark:border-[#422C36] text-xs space-y-1">
-                <div className="text-[#8C521E] dark:text-[#FFE8C4] font-medium uppercase tracking-wider text-[10px]">
+              <div className="bg-[#FBEEBF] dark:bg-[#2A1F26] p-3 rounded-2xl border border-[#F3D3C9] dark:border-[#422C36] text-xs space-y-1">
+                <div className="text-[#8C521E] dark:text-[#F3D3C9] font-medium uppercase tracking-wider text-[10px]">
                   Target Item ({reportModal.targetType})
                 </div>
-                <div className="font-semibold text-[#2D1F25] dark:text-[#FFF4DE] text-sm">
+                <div className="font-semibold text-[#2D1F25] dark:text-[#FBEEBF] text-sm">
                   {reportModal.targetName}
                 </div>
               </div>
@@ -98,7 +98,7 @@ export const ReportModal: React.FC = () => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="e.g. Room B-204 projector was replaced, or the hackathon deadline was extended."
-                className="w-full text-sm rounded-2xl border border-[#FFCED8] dark:border-[#4A2D39] bg-white dark:bg-[#1A1217] p-3 text-[#2D1F25] dark:text-[#FFF4DE] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] transition"
+                className="w-full text-sm rounded-2xl border border-[#F2B4C0] dark:border-[#4A2D39] bg-white dark:bg-[#1A1217] p-3 text-[#2D1F25] dark:text-[#FBEEBF] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] transition"
               />
             </div>
 
@@ -112,7 +112,7 @@ export const ReportModal: React.FC = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="student@offshore-univ.edu"
-                className="w-full text-sm rounded-2xl border border-[#FFCED8] dark:border-[#4A2D39] bg-white dark:bg-[#1A1217] px-3 py-2 text-[#2D1F25] dark:text-[#FFF4DE] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] transition"
+                className="w-full text-sm rounded-2xl border border-[#F2B4C0] dark:border-[#4A2D39] bg-white dark:bg-[#1A1217] px-3 py-2 text-[#2D1F25] dark:text-[#FBEEBF] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E] transition"
               />
             </div>
 
@@ -120,7 +120,7 @@ export const ReportModal: React.FC = () => {
               <button
                 type="button"
                 onClick={closeReportModal}
-                className="px-4 py-2 text-xs font-semibold text-[#7A616B] dark:text-[#BFA5AF] hover:bg-[#FFF4DE] dark:hover:bg-[#2A1F26] rounded-xl transition"
+                className="px-4 py-2 text-xs font-semibold text-[#7A616B] dark:text-[#BFA5AF] hover:bg-[#FBEEBF] dark:hover:bg-[#2A1F26] rounded-xl transition"
               >
                 Cancel
               </button>

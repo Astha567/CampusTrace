@@ -63,10 +63,10 @@ export const ContactsPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               CampusTrace Contacts Directory
             </h1>
-            <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8]">
+            <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0]">
               <ShieldCheck className="w-3 h-3 text-[#D94A6E]" />
               Verified Consent
             </span>
@@ -78,17 +78,17 @@ export const ContactsPage: React.FC = () => {
       </div>
 
       {/* Trust & Privacy Notice Card with Palette */}
-      <div className="p-4 rounded-2xl bg-[#FFF4DE] dark:bg-[#2A201A] border border-[#FFE8C4] dark:border-[#4A3926] flex items-start gap-3 text-xs text-[#6B350A] dark:text-[#FFE8C4]">
-        <Lock className="w-4 h-4 text-[#C45E12] dark:text-[#FFE8C4] mt-0.5 shrink-0" />
+      <div className="p-4 rounded-2xl bg-[#FBEEBF] dark:bg-[#2A201A] border border-[#F3D3C9] dark:border-[#4A3926] flex items-start gap-3 text-xs text-[#6B350A] dark:text-[#F3D3C9]">
+        <Lock className="w-4 h-4 text-[#C45E12] dark:text-[#F3D3C9] mt-0.5 shrink-0" />
         <div>
           <span className="font-bold">Privacy & Student Protection Commitment:</span> Only information that the individual formally consented to publish or that the university publicly mandates is displayed. Personal phone numbers are never harvested.
         </div>
       </div>
 
       {/* Controls: Section Tabs, Search & Department */}
-      <div className="bg-white dark:bg-[#20181D] p-4 rounded-3xl border border-[#FFCED8] dark:border-[#422C36] shadow-sm space-y-3">
+      <div className="bg-white dark:bg-[#20181D] p-4 rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] shadow-sm space-y-3">
         {/* Section Tabs */}
-        <div className="flex p-1 bg-[#FFF4DE] dark:bg-[#2A1F26] rounded-2xl max-w-md border border-[#FFE8C4]">
+        <div className="flex p-1 bg-[#FBEEBF] dark:bg-[#2A1F26] rounded-2xl max-w-md border border-[#F3D3C9]">
           <button
             onClick={() => setActiveSection('all')}
             className={`flex-1 py-1.5 text-xs font-bold rounded-xl transition ${
@@ -124,13 +124,13 @@ export const ContactsPage: React.FC = () => {
         {/* Search & Department row */}
         <div className="flex flex-col sm:flex-row items-center gap-3 pt-1">
           <div className="relative flex-1 w-full">
-            <Search className="w-4 h-4 text-[#C45E12] dark:text-[#FFE8C4] absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-[#C45E12] dark:text-[#F3D3C9] absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search by name, role, or area of assistance (e.g. hackathons, course waivers, counseling)..."
-              className="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-[#FFFDF9] dark:bg-[#1A1217] border border-[#FFCED8] dark:border-[#4A2D39] text-[#2D1F25] dark:text-[#FFF4DE] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
+              className="w-full pl-9 pr-4 py-2 rounded-xl text-xs sm:text-sm bg-[#FFF5D6] dark:bg-[#1A1217] border border-[#F2B4C0] dark:border-[#4A2D39] text-[#2D1F25] dark:text-[#FBEEBF] placeholder:text-[#A8929B] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
             />
             {searchQuery && (
               <button
@@ -145,7 +145,7 @@ export const ContactsPage: React.FC = () => {
           <select
             value={selectedDepartment}
             onChange={(e) => setSelectedDepartment(e.target.value)}
-            className="w-full sm:w-auto px-3 py-2 rounded-xl text-xs font-semibold bg-[#FFFDF9] dark:bg-[#1E171C] border border-[#FFCED8] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FFF4DE] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
+            className="w-full sm:w-auto px-3 py-2 rounded-xl text-xs font-semibold bg-[#FFF5D6] dark:bg-[#1E171C] border border-[#F2B4C0] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FBEEBF] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
           >
             <option value="all">All Departments</option>
             {departments.map((d) => (
@@ -168,8 +168,8 @@ export const ContactsPage: React.FC = () => {
               key={contact.id}
               className={`rounded-3xl border p-5 transition flex flex-col justify-between gap-4 shadow-sm hover:shadow-md ${
                 isHighlighted
-                  ? 'border-[#D94A6E] ring-2 ring-[#D94A6E]/20 bg-[#FFDDDD]/40 dark:bg-[#3D1E28]/40'
-                  : 'bg-white dark:bg-[#20181D] border-[#FFCED8]/70 dark:border-[#422C36]'
+                  ? 'border-[#D94A6E] ring-2 ring-[#D94A6E]/20 bg-[#ECC0C2]/40 dark:bg-[#3D1E28]/40'
+                  : 'bg-white dark:bg-[#20181D] border-[#F2B4C0]/70 dark:border-[#422C36]'
               }`}
             >
               <div className="space-y-3">
@@ -190,14 +190,14 @@ export const ContactsPage: React.FC = () => {
                         .join('')}
                     </div>
                     <div>
-                      <h3 className="font-extrabold text-sm text-[#2D1F25] dark:text-[#FFF4DE]">
+                      <h3 className="font-extrabold text-sm text-[#2D1F25] dark:text-[#FBEEBF]">
                         {contact.name}
                       </h3>
                       <span
                         className={`inline-block px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
                           isFaculty
-                            ? 'bg-[#FFDDDD] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#FFCED8]'
-                            : 'bg-[#FFE8C4] text-[#7A3A00] dark:bg-[#382618] dark:text-[#FFE8C4]'
+                            ? 'bg-[#ECC0C2] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#F2B4C0]'
+                            : 'bg-[#F3D3C9] text-[#7A3A00] dark:bg-[#382618] dark:text-[#F3D3C9]'
                         }`}
                       >
                         {isFaculty ? 'Faculty Member' : 'Student Lead'}
@@ -216,8 +216,8 @@ export const ContactsPage: React.FC = () => {
 
                 {/* Role and Department */}
                 <div className="text-xs space-y-0.5">
-                  <div className="font-semibold text-[#2D1F25] dark:text-[#FFF4DE]">{contact.role}</div>
-                  <div className="text-[#D94A6E] dark:text-[#FFCED8] font-medium">{contact.department}</div>
+                  <div className="font-semibold text-[#2D1F25] dark:text-[#FBEEBF]">{contact.role}</div>
+                  <div className="text-[#D94A6E] dark:text-[#F2B4C0] font-medium">{contact.department}</div>
                 </div>
 
                 {/* What they can help with */}
@@ -236,7 +236,7 @@ export const ContactsPage: React.FC = () => {
                 </div>
 
                 {/* Approved Contact Details */}
-                <div className="space-y-1.5 pt-2 border-t border-[#FFCED8]/40 dark:border-[#38202A] text-xs">
+                <div className="space-y-1.5 pt-2 border-t border-[#F2B4C0]/40 dark:border-[#38202A] text-xs">
                   <div className="flex items-start gap-1.5 text-[#5C454F] dark:text-[#C7B0BA]">
                     <Mail className="w-3.5 h-3.5 text-[#D94A6E] shrink-0 mt-0.5" />
                     <span className="leading-snug">{contact.contactMethod}</span>
@@ -252,7 +252,7 @@ export const ContactsPage: React.FC = () => {
               </div>
 
               {/* Action buttons (WhatsApp, Source) */}
-              <div className="pt-3 border-t border-[#FFCED8]/40 dark:border-[#38202A] flex items-center justify-between text-xs">
+              <div className="pt-3 border-t border-[#F2B4C0]/40 dark:border-[#38202A] flex items-center justify-between text-xs">
                 {contact.permissionGiven && contact.whatsappUrl ? (
                   <a
                     href={contact.whatsappUrl}
@@ -279,9 +279,9 @@ export const ContactsPage: React.FC = () => {
       </div>
 
       {filteredContacts.length === 0 && (
-        <div className="text-center py-16 bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] space-y-2">
-          <Users className="w-10 h-10 text-[#FFCED8] mx-auto" />
-          <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm">
+        <div className="text-center py-16 bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] space-y-2">
+          <Users className="w-10 h-10 text-[#F2B4C0] mx-auto" />
+          <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm">
             No contacts found
           </h3>
           <p className="text-xs text-[#7A616B]">
