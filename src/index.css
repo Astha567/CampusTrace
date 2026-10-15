@@ -3,19 +3,57 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-palette-rose: #FFCED8;
-  --color-palette-blush: #FFDDDD;
-  --color-palette-cream: #FFF4DE;
-  --color-palette-peach: #FFE8C4;
+  /* Figma Pastel Pink Specification */
+  --color-light-rose: #F2B4C0;
+  --color-soft-pink: #ECC0C2;
+  --color-pale-peach: #F3D3C9;
+  --color-cream-white: #FFF5D6;
+  --color-pastel-yellow: #FBEEBF;
 
+  /* Palette Aliases */
+  --color-palette-rose: #F2B4C0;
+  --color-palette-blush: #ECC0C2;
+  --color-palette-peach: #F3D3C9;
+  --color-palette-cream: #FFF5D6;
+  --color-palette-yellow: #FBEEBF;
+
+  /* Brand Semantic Colors */
   --color-brand-primary: #D94A6E;
   --color-brand-primary-hover: #BF3659;
   --color-brand-primary-dark: #A62545;
-  --color-brand-surface: #FFF9F2;
+  --color-brand-surface: #FFF5D6;
   --color-brand-card: #FFFFFF;
-  --color-brand-border: #FFCED8;
-  --color-brand-peach: #FFE8C4;
-  --color-brand-cream: #FFF4DE;
+  --color-brand-border: #F2B4C0;
+  --color-brand-peach: #F3D3C9;
+  --color-brand-cream: #FBEEBF;
+}
+
+:root {
+  --theme-bg-base: #FFF5D6;
+  --theme-bg-surface: #FFF5D6;
+  --theme-bg-card: #FFFFFF;
+  --theme-bg-secondary: #FBEEBF;
+  --theme-bg-peach: #F3D3C9;
+  --theme-bg-pink: #ECC0C2;
+  --theme-border: #F2B4C0;
+  --theme-text-primary: #2D1F25;
+  --theme-text-muted: #7A616B;
+  --theme-brand: #D94A6E;
+  color-scheme: light;
+}
+
+.dark {
+  --theme-bg-base: #181216;
+  --theme-bg-surface: #1E171C;
+  --theme-bg-card: #20181D;
+  --theme-bg-secondary: #2C2128;
+  --theme-bg-peach: #3D2C1E;
+  --theme-bg-pink: #3D1E28;
+  --theme-border: #422C36;
+  --theme-text-primary: #F7EBEF;
+  --theme-text-muted: #BFA5AF;
+  --theme-brand: #D94A6E;
+  color-scheme: dark;
 }
 
 @layer base {
@@ -35,12 +73,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(224, 78, 111, 0.25);
+  background: rgba(242, 180, 192, 0.45);
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(224, 78, 111, 0.45);
+  background: rgba(217, 74, 110, 0.6);
 }
 
 /* Hide scrollbar for clean horizontal shelves */
@@ -51,3 +89,4 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+

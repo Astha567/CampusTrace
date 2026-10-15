@@ -42,7 +42,7 @@ const MainContent: React.FC = () => {
 export default function App() {
   return (
     <AppProvider>
-      <div className="min-h-screen flex flex-col bg-[#FFF9F2] dark:bg-[#181216] text-[#2C2126] dark:text-[#F7EBEF] font-sans transition-colors">
+      <div className="min-h-screen flex flex-col bg-[#FFF5D6] dark:bg-[#181216] text-[#2D1F25] dark:text-[#F7EBEF] font-sans transition-colors">
         {/* Top Sample Data Disclaimer */}
         <SampleDataBanner />
 

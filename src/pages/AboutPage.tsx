@@ -102,10 +102,10 @@ export const AboutPage: React.FC = () => {
       {/* Title */}
       <div>
         <div className="flex items-center gap-2">
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+          <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
             About & Trust Policy
           </h1>
-          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8] dark:border-[#5C2B3C]">
+          <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0] dark:border-[#5C2B3C]">
             CampusTrace
           </span>
         </div>
@@ -116,11 +116,11 @@ export const AboutPage: React.FC = () => {
 
       {/* Core Principles Grid using Palette */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFCED8]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
-          <div className="w-10 h-10 rounded-2xl bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#D94A6E] dark:text-[#FFCED8] flex items-center justify-center">
+        <div className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F2B4C0]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
+          <div className="w-10 h-10 rounded-2xl bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#D94A6E] dark:text-[#F2B4C0] flex items-center justify-center">
             <ShieldCheck className="w-5 h-5" />
           </div>
-          <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm">
+          <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm">
             Accuracy First
           </h3>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -128,11 +128,11 @@ export const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFCED8]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
-          <div className="w-10 h-10 rounded-2xl bg-[#FFE8C4] dark:bg-[#382618] text-[#8C3A00] dark:text-[#FFE8C4] flex items-center justify-center">
+        <div className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F2B4C0]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
+          <div className="w-10 h-10 rounded-2xl bg-[#F3D3C9] dark:bg-[#382618] text-[#8C3A00] dark:text-[#F3D3C9] flex items-center justify-center">
             <Lock className="w-5 h-5" />
           </div>
-          <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm">
+          <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm">
             Zero Tracking Privacy
           </h3>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -140,11 +140,11 @@ export const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFCED8]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
-          <div className="w-10 h-10 rounded-2xl bg-[#FFF4DE] dark:bg-[#302521] text-[#8C5200] dark:text-[#FFF4DE] flex items-center justify-center">
+        <div className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F2B4C0]/70 dark:border-[#422C36] space-y-2.5 shadow-sm">
+          <div className="w-10 h-10 rounded-2xl bg-[#FBEEBF] dark:bg-[#302521] text-[#8C5200] dark:text-[#FBEEBF] flex items-center justify-center">
             <Sparkles className="w-5 h-5" />
           </div>
-          <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm">
+          <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm">
             Grounded AI Guardrails
           </h3>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -154,12 +154,12 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* "WHAT NEEDS TO BE CONFIRMED" CHECKLIST */}
-      <section className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl border border-[#FFCED8]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
-        <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/40 dark:border-[#38202A]">
+      <section className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+        <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/40 dark:border-[#38202A]">
           <div>
             <div className="flex items-center gap-2">
-              <FileCheck className="w-5 h-5 text-[#D94A6E] dark:text-[#FFCED8]" />
-              <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+              <FileCheck className="w-5 h-5 text-[#D94A6E] dark:text-[#F2B4C0]" />
+              <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
                 What Needs to be Confirmed (Production Checklist)
               </h2>
             </div>
@@ -178,17 +178,17 @@ export const AboutPage: React.FC = () => {
                 onClick={() => toggleChecklistItem(item.id)}
                 className={`p-3.5 rounded-2xl border transition cursor-pointer flex items-start gap-3 ${
                   isChecked
-                    ? 'border-[#FFCED8] dark:border-[#5C2B3C] bg-[#FFDDDD]/30 dark:bg-[#3D1E28]/40'
-                    : 'border-[#FFCED8]/50 dark:border-[#422C36] bg-[#FFF9F2]/60 dark:bg-[#1E171C]/50'
+                    ? 'border-[#F2B4C0] dark:border-[#5C2B3C] bg-[#ECC0C2]/30 dark:bg-[#3D1E28]/40'
+                    : 'border-[#F2B4C0]/50 dark:border-[#422C36] bg-[#FFF5D6]/60 dark:bg-[#1E171C]/50'
                 }`}
               >
                 <button
                   type="button"
-                  className="mt-0.5 text-[#D94A6E] dark:text-[#FFCED8] shrink-0"
+                  className="mt-0.5 text-[#D94A6E] dark:text-[#F2B4C0] shrink-0"
                   aria-label={isChecked ? `Uncheck ${item.title}` : `Check ${item.title}`}
                 >
                   {isChecked ? (
-                    <CheckSquare className="w-5 h-5 text-[#D94A6E] dark:text-[#FFCED8]" />
+                    <CheckSquare className="w-5 h-5 text-[#D94A6E] dark:text-[#F2B4C0]" />
                   ) : (
                     <Square className="w-5 h-5 text-[#A8929B]" />
                   )}
@@ -197,8 +197,8 @@ export const AboutPage: React.FC = () => {
                   <h4
                     className={`text-xs font-bold ${
                       isChecked
-                        ? 'text-[#8C203B] dark:text-[#FFCED8] line-through opacity-70'
-                        : 'text-[#2D1F25] dark:text-[#FFF4DE]'
+                        ? 'text-[#8C203B] dark:text-[#F2B4C0] line-through opacity-70'
+                        : 'text-[#2D1F25] dark:text-[#FBEEBF]'
                     }`}
                   >
                     {item.title}
@@ -214,38 +214,38 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* ROADMAP & STRETCH GOALS */}
-      <section className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl border border-[#FFCED8]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+      <section className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
         <div className="flex items-center gap-2">
-          <Rocket className="w-5 h-5 text-[#D94A6E] dark:text-[#FFE8C4]" />
-          <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+          <Rocket className="w-5 h-5 text-[#D94A6E] dark:text-[#F3D3C9]" />
+          <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
             Roadmap & Extension Points
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-          <div className="p-3.5 rounded-2xl bg-[#FFF9F2] dark:bg-[#261B21] border border-[#FFCED8]/60 dark:border-[#422C36] space-y-1">
-            <span className="font-bold text-[#2D1F25] dark:text-[#FFF4DE]">Full 3D Campus Digital Twin</span>
+          <div className="p-3.5 rounded-2xl bg-[#FFF5D6] dark:bg-[#261B21] border border-[#F2B4C0]/60 dark:border-[#422C36] space-y-1">
+            <span className="font-bold text-[#2D1F25] dark:text-[#FBEEBF]">Full 3D Campus Digital Twin</span>
             <p className="text-[#5C454F] dark:text-[#BFA5AF] text-[11px]">
               Expand beyond the current experimental 3D block prototype into full WebGL/Three.js interactive campus walkthrough.
             </p>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#FFF9F2] dark:bg-[#261B21] border border-[#FFCED8]/60 dark:border-[#422C36] space-y-1">
-            <span className="font-bold text-[#2D1F25] dark:text-[#FFF4DE]">Multi-Source Event Sync</span>
+          <div className="p-3.5 rounded-2xl bg-[#FFF5D6] dark:bg-[#261B21] border border-[#F2B4C0]/60 dark:border-[#422C36] space-y-1">
+            <span className="font-bold text-[#2D1F25] dark:text-[#FBEEBF]">Multi-Source Event Sync</span>
             <p className="text-[#5C454F] dark:text-[#BFA5AF] text-[11px]">
               Automated ingestion pipelines connecting student portal circulars, Devfolio hackathons, and Google Calendar feeds.
             </p>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#FFF9F2] dark:bg-[#261B21] border border-[#FFCED8]/60 dark:border-[#422C36] space-y-1">
-            <span className="font-bold text-[#2D1F25] dark:text-[#FFF4DE]">Native Push & SMS Reminders</span>
+          <div className="p-3.5 rounded-2xl bg-[#FFF5D6] dark:bg-[#261B21] border border-[#F2B4C0]/60 dark:border-[#422C36] space-y-1">
+            <span className="font-bold text-[#2D1F25] dark:text-[#FBEEBF]">Native Push & SMS Reminders</span>
             <p className="text-[#5C454F] dark:text-[#BFA5AF] text-[11px]">
               Optional WhatsApp or email reminder integration with opt-in user consent to notify 2h before registration closures.
             </p>
           </div>
 
-          <div className="p-3.5 rounded-2xl bg-[#FFF9F2] dark:bg-[#261B21] border border-[#FFCED8]/60 dark:border-[#422C36] space-y-1">
-            <span className="font-bold text-[#2D1F25] dark:text-[#FFF4DE]">Universal Accessibility Routing</span>
+          <div className="p-3.5 rounded-2xl bg-[#FFF5D6] dark:bg-[#261B21] border border-[#F2B4C0]/60 dark:border-[#422C36] space-y-1">
+            <span className="font-bold text-[#2D1F25] dark:text-[#FBEEBF]">Universal Accessibility Routing</span>
             <p className="text-[#5C454F] dark:text-[#BFA5AF] text-[11px]">
               Dedicated step-free, tactile pavement, and elevator-only paths across all 6 blocks for students with mobility needs.
             </p>
@@ -254,18 +254,18 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* FREQUENTLY ASKED QUESTIONS (15 Sample Entries) */}
-      <section className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl border border-[#FFCED8]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
-        <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/40 dark:border-[#38202A]">
+      <section className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0]/70 dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+        <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/40 dark:border-[#38202A]">
           <div className="flex items-center gap-2">
-            <HelpCircle className="w-5 h-5 text-[#D94A6E] dark:text-[#FFCED8]" />
-            <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <HelpCircle className="w-5 h-5 text-[#D94A6E] dark:text-[#F2B4C0]" />
+            <h2 className="text-lg font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               Freshman Campus Guide & FAQs ({faqs.length})
             </h2>
           </div>
           <span className="text-xs text-[#8F7580] dark:text-[#BFA5AF]">Verified official handbook</span>
         </div>
 
-        <div className="divide-y divide-[#FFCED8]/40 dark:divide-[#38202A]">
+        <div className="divide-y divide-[#F2B4C0]/40 dark:divide-[#38202A]">
           {faqs.map((faq) => {
             const isExpanded = expandedFaqId === faq.id;
             return (
@@ -274,7 +274,7 @@ export const AboutPage: React.FC = () => {
                   onClick={() => setExpandedFaqId(isExpanded ? null : faq.id)}
                   className="w-full text-left flex items-start justify-between gap-3 group focus:outline-none"
                 >
-                  <span className="font-bold text-xs sm:text-sm text-[#2D1F25] dark:text-[#FFF4DE] group-hover:text-[#D94A6E] dark:group-hover:text-[#FFCED8] transition-colors">
+                  <span className="font-bold text-xs sm:text-sm text-[#2D1F25] dark:text-[#FBEEBF] group-hover:text-[#D94A6E] dark:group-hover:text-[#F2B4C0] transition-colors">
                     {faq.question}
                   </span>
                   <span className="p-1 text-[#8F7580] group-hover:text-[#D94A6E] shrink-0">
@@ -285,7 +285,7 @@ export const AboutPage: React.FC = () => {
                 {isExpanded && (
                   <div className="mt-2 text-xs text-[#5C454F] dark:text-[#D9C4CC] leading-relaxed space-y-2 animate-in fade-in duration-150">
                     <p>{faq.answer}</p>
-                    <div className="text-[10px] text-[#8F7580] dark:text-[#A8929B] flex items-center justify-between pt-1 border-t border-[#FFCED8]/30 dark:border-[#38202A]">
+                    <div className="text-[10px] text-[#8F7580] dark:text-[#A8929B] flex items-center justify-between pt-1 border-t border-[#F2B4C0]/30 dark:border-[#38202A]">
                       <span>Source: {faq.sourceLabel}</span>
                       <span>Verified: {faq.lastUpdated}</span>
                     </div>
@@ -298,9 +298,9 @@ export const AboutPage: React.FC = () => {
       </section>
 
       {/* Community Report Prompt Callout with Palette */}
-      <div className="p-6 rounded-3xl bg-gradient-to-r from-[#FFCED8]/40 via-[#FFDDDD]/30 to-[#FFF4DE]/40 dark:from-[#3D1E28] dark:to-[#2A1820] border border-[#FFCED8] dark:border-[#5C2B3C] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="p-6 rounded-3xl bg-gradient-to-r from-[#F2B4C0]/40 via-[#ECC0C2]/30 to-[#FBEEBF]/40 dark:from-[#3D1E28] dark:to-[#2A1820] border border-[#F2B4C0] dark:border-[#5C2B3C] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 text-[#8C203B] dark:text-[#FFCED8] font-bold text-sm">
+          <div className="flex items-center gap-2 text-[#8C203B] dark:text-[#F2B4C0] font-bold text-sm">
             <ShieldAlert className="w-4 h-4 text-[#D94A6E]" />
             Spot an outdated room number or postponed event?
           </div>

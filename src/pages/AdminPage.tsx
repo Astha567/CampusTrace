@@ -112,13 +112,13 @@ export const AdminPage: React.FC = () => {
 
   if (!isAuthenticated) {
     return (
-      <div className="max-w-md mx-auto my-12 p-6 sm:p-8 bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] shadow-xl space-y-6">
-        <div className="w-12 h-12 rounded-2xl bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] flex items-center justify-center mx-auto">
+      <div className="max-w-md mx-auto my-12 p-6 sm:p-8 bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] shadow-xl space-y-6">
+        <div className="w-12 h-12 rounded-2xl bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] flex items-center justify-center mx-auto">
           <Lock className="w-6 h-6" />
         </div>
 
         <div className="text-center space-y-1">
-          <h2 className="text-xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+          <h2 className="text-xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
             CampusTrace Admin Portal
           </h2>
           <p className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -126,13 +126,13 @@ export const AdminPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="p-3.5 rounded-2xl bg-[#FFE8C4]/70 dark:bg-[#382618] border border-[#FFE8C4] dark:border-[#523A25] text-xs text-[#7A3A00] dark:text-[#FFE8C4] space-y-1">
+        <div className="p-3.5 rounded-2xl bg-[#F3D3C9]/70 dark:bg-[#382618] border border-[#F3D3C9] dark:border-[#523A25] text-xs text-[#7A3A00] dark:text-[#F3D3C9] space-y-1">
           <div className="font-bold flex items-center gap-1.5">
             <Unlock className="w-3.5 h-3.5 text-[#C45E12]" />
             Hard-coded Demo Access
           </div>
           <div>
-            Demo Password: <code className="font-mono font-bold bg-[#FFE8C4] dark:bg-[#4A3322] px-1.5 py-0.5 rounded">offshore2026</code>
+            Demo Password: <code className="font-mono font-bold bg-[#F3D3C9] dark:bg-[#4A3322] px-1.5 py-0.5 rounded">offshore2026</code>
           </div>
         </div>
 
@@ -146,7 +146,7 @@ export const AdminPage: React.FC = () => {
               value={passwordInput}
               onChange={(e) => setPasswordInput(e.target.value)}
               placeholder="offshore2026"
-              className="w-full px-4 py-2.5 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-[#FFFDF9] dark:bg-[#1A1217] text-sm text-[#2D1F25] dark:text-[#FFF4DE] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
+              className="w-full px-4 py-2.5 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-[#FFF5D6] dark:bg-[#1A1217] text-sm text-[#2D1F25] dark:text-[#FBEEBF] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
             />
             {passwordError && (
               <p className="text-xs text-[#D94A6E] mt-1 font-semibold">
@@ -172,10 +172,10 @@ export const AdminPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               CampusTrace Admin Portal
             </h1>
-            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8]">
+            <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0]">
               Mock Dashboard
             </span>
           </div>
@@ -187,7 +187,7 @@ export const AdminPage: React.FC = () => {
         <div className="flex items-center gap-2">
           <button
             onClick={handleResetSampleData}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#5C454F] dark:text-[#FFF4DE] bg-[#FFF4DE] dark:bg-[#2A1F26] hover:bg-[#FFE8C4] transition border border-[#FFE8C4]"
+            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-[#5C454F] dark:text-[#FBEEBF] bg-[#FBEEBF] dark:bg-[#2A1F26] hover:bg-[#F3D3C9] transition border border-[#F3D3C9]"
             title="Reset data"
           >
             <RotateCcw className="w-3.5 h-3.5 text-[#D94A6E]" />
@@ -196,7 +196,7 @@ export const AdminPage: React.FC = () => {
 
           <button
             onClick={() => setIsAuthenticated(false)}
-            className="px-3.5 py-2 rounded-xl text-xs font-bold text-[#D94A6E] hover:bg-[#FFDDDD]/50 transition"
+            className="px-3.5 py-2 rounded-xl text-xs font-bold text-[#D94A6E] hover:bg-[#ECC0C2]/50 transition"
           >
             Log Out
           </button>
@@ -204,7 +204,7 @@ export const AdminPage: React.FC = () => {
       </div>
 
       {/* Admin Tabs */}
-      <div className="flex items-center gap-2 p-1 bg-[#FFF4DE] dark:bg-[#2A1F26] rounded-2xl max-w-md border border-[#FFE8C4]">
+      <div className="flex items-center gap-2 p-1 bg-[#FBEEBF] dark:bg-[#2A1F26] rounded-2xl max-w-md border border-[#F3D3C9]">
         <button
           onClick={() => setAdminTab('events')}
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 ${
@@ -244,9 +244,9 @@ export const AdminPage: React.FC = () => {
 
       {/* TAB 1: EVENTS MANAGEMENT */}
       {adminTab === 'events' && (
-        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
-          <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/50 dark:border-[#38202A]">
-            <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FFF4DE] text-base">
+        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+          <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/50 dark:border-[#38202A]">
+            <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FBEEBF] text-base">
               Campus Events & Opportunities List
             </h3>
             <button
@@ -279,7 +279,7 @@ export const AdminPage: React.FC = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="text-[10px] uppercase font-bold text-[#8C203B] dark:text-[#FFCED8] border-b border-[#FFCED8]/60 dark:border-[#38202A]">
+              <thead className="text-[10px] uppercase font-bold text-[#8C203B] dark:text-[#F2B4C0] border-b border-[#F2B4C0]/60 dark:border-[#38202A]">
                 <tr>
                   <th className="py-2.5 px-2">Title</th>
                   <th className="py-2.5 px-2">Type</th>
@@ -289,10 +289,10 @@ export const AdminPage: React.FC = () => {
                   <th className="py-2.5 px-2 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#FFCED8]/30 dark:divide-[#38202A]">
+              <tbody className="divide-y divide-[#F2B4C0]/30 dark:divide-[#38202A]">
                 {events.map((evt) => (
-                  <tr key={evt.id} className="hover:bg-[#FFF4DE]/40 dark:hover:bg-[#2A1F26]">
-                    <td className="py-3 px-2 font-bold text-[#2D1F25] dark:text-[#FFF4DE] max-w-xs truncate">
+                  <tr key={evt.id} className="hover:bg-[#FBEEBF]/40 dark:hover:bg-[#2A1F26]">
+                    <td className="py-3 px-2 font-bold text-[#2D1F25] dark:text-[#FBEEBF] max-w-xs truncate">
                       {evt.title}
                     </td>
                     <td className="py-3 px-2 uppercase text-[10px] font-semibold text-[#7A616B]">
@@ -302,7 +302,7 @@ export const AdminPage: React.FC = () => {
                       {new Date(evt.deadline).toLocaleDateString()}
                     </td>
                     <td className="py-3 px-2">
-                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8]">
+                      <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0]">
                         {evt.status}
                       </span>
                     </td>
@@ -343,10 +343,10 @@ export const AdminPage: React.FC = () => {
 
       {/* TAB 2: CONTACTS PERMISSION FLAGS */}
       {adminTab === 'contacts' && (
-        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
-          <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/50 dark:border-[#38202A]">
+        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+          <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/50 dark:border-[#38202A]">
             <div>
-              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FFF4DE] text-base">
+              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FBEEBF] text-base">
                 Directory Contacts & Consent Management
               </h3>
               <p className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -357,7 +357,7 @@ export const AdminPage: React.FC = () => {
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
-              <thead className="text-[10px] uppercase font-bold text-[#8C203B] dark:text-[#FFCED8] border-b border-[#FFCED8]/60 dark:border-[#38202A]">
+              <thead className="text-[10px] uppercase font-bold text-[#8C203B] dark:text-[#F2B4C0] border-b border-[#F2B4C0]/60 dark:border-[#38202A]">
                 <tr>
                   <th className="py-2.5 px-2">Name</th>
                   <th className="py-2.5 px-2">Role & Dept</th>
@@ -366,17 +366,17 @@ export const AdminPage: React.FC = () => {
                   <th className="py-2.5 px-2">Last Verified</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[#FFCED8]/30 dark:divide-[#38202A]">
+              <tbody className="divide-y divide-[#F2B4C0]/30 dark:divide-[#38202A]">
                 {contacts.map((c) => (
-                  <tr key={c.id} className="hover:bg-[#FFF4DE]/40 dark:hover:bg-[#2A1F26]">
-                    <td className="py-3 px-2 font-bold text-[#2D1F25] dark:text-[#FFF4DE]">
+                  <tr key={c.id} className="hover:bg-[#FBEEBF]/40 dark:hover:bg-[#2A1F26]">
+                    <td className="py-3 px-2 font-bold text-[#2D1F25] dark:text-[#FBEEBF]">
                       {c.name}
                     </td>
                     <td className="py-3 px-2 text-[#5C454F] dark:text-[#C7B0BA]">
                       <div>{c.role}</div>
                       <div className="text-[10px] text-[#7A616B]">{c.department}</div>
                     </td>
-                    <td className="py-3 px-2 uppercase text-[10px] font-semibold text-[#8C203B] dark:text-[#FFCED8]">
+                    <td className="py-3 px-2 uppercase text-[10px] font-semibold text-[#8C203B] dark:text-[#F2B4C0]">
                       {c.type === 'faculty' ? 'Faculty' : 'Student Lead'}
                     </td>
                     <td className="py-3 px-2">
@@ -384,7 +384,7 @@ export const AdminPage: React.FC = () => {
                         onClick={() => handleToggleWhatsAppPermission(c)}
                         className={`px-2.5 py-1 rounded-xl text-[11px] font-bold transition ${
                           c.permissionGiven
-                            ? 'bg-[#FFDDDD] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#FFCED8]'
+                            ? 'bg-[#ECC0C2] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#F2B4C0]'
                             : 'bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-400'
                         }`}
                       >
@@ -402,10 +402,10 @@ export const AdminPage: React.FC = () => {
 
       {/* TAB 3: USER REPORTED ISSUES INBOX */}
       {adminTab === 'reports' && (
-        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
-          <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/50 dark:border-[#38202A]">
+        <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-6 space-y-4 shadow-sm">
+          <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/50 dark:border-[#38202A]">
             <div>
-              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FFF4DE] text-base">
+              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FBEEBF] text-base">
                 Community Feedback & Correction Reports
               </h3>
               <p className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -423,15 +423,15 @@ export const AdminPage: React.FC = () => {
               {reports.map((rep) => (
                 <div
                   key={rep.id}
-                  className="p-4 rounded-2xl border border-[#FFCED8] dark:border-[#422C36] space-y-2 text-xs"
+                  className="p-4 rounded-2xl border border-[#F2B4C0] dark:border-[#422C36] space-y-2 text-xs"
                 >
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-bold text-[#2D1F25] dark:text-[#FFF4DE]">
+                        <span className="font-bold text-[#2D1F25] dark:text-[#FBEEBF]">
                           {rep.targetName || 'General Feedback'}
                         </span>
-                        <span className="px-2 py-0.5 rounded-full text-[10px] uppercase font-bold bg-[#FFDDDD] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#FFCED8]">
+                        <span className="px-2 py-0.5 rounded-full text-[10px] uppercase font-bold bg-[#ECC0C2] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#F2B4C0]">
                           {rep.targetType}
                         </span>
                       </div>
@@ -447,7 +447,7 @@ export const AdminPage: React.FC = () => {
                         className={`px-2.5 py-1 rounded-lg text-xs font-bold transition ${
                           rep.status === 'resolved'
                             ? 'bg-[#2A9D8F] text-white'
-                            : 'bg-[#FFF4DE] dark:bg-[#2A1F26] text-[#6B350A] dark:text-[#FFE8C4]'
+                            : 'bg-[#FBEEBF] dark:bg-[#2A1F26] text-[#6B350A] dark:text-[#F3D3C9]'
                         }`}
                       >
                         Resolved
@@ -457,7 +457,7 @@ export const AdminPage: React.FC = () => {
                         className={`px-2.5 py-1 rounded-lg text-xs font-bold transition ${
                           rep.status === 'pending'
                             ? 'bg-[#E08A38] text-white'
-                            : 'bg-[#FFF4DE] dark:bg-[#2A1F26] text-[#6B350A] dark:text-[#FFE8C4]'
+                            : 'bg-[#FBEEBF] dark:bg-[#2A1F26] text-[#6B350A] dark:text-[#F3D3C9]'
                         }`}
                       >
                         Pending
@@ -465,7 +465,7 @@ export const AdminPage: React.FC = () => {
                     </div>
                   </div>
 
-                  <p className="text-[#5C454F] dark:text-[#D9C4CC] bg-[#FFFDF9] dark:bg-[#1E171C] p-2.5 rounded-xl border border-[#FFCED8]/60 dark:border-[#422C36]">
+                  <p className="text-[#5C454F] dark:text-[#D9C4CC] bg-[#FFF5D6] dark:bg-[#1E171C] p-2.5 rounded-xl border border-[#F2B4C0]/60 dark:border-[#422C36]">
                     "{rep.message}"
                   </p>
                 </div>
@@ -482,9 +482,9 @@ export const AdminPage: React.FC = () => {
           aria-modal="true"
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#2D1F25]/60 backdrop-blur-sm animate-in fade-in duration-150"
         >
-          <div className="bg-[#FFFDF9] dark:bg-[#20181D] rounded-3xl max-w-lg w-full border border-[#FFCED8] dark:border-[#422C36] p-6 space-y-4 max-h-[90vh] overflow-y-auto">
-            <div className="flex items-center justify-between pb-3 border-b border-[#FFCED8]/60 dark:border-[#38202A]">
-              <h3 className="font-bold text-base text-[#2D1F25] dark:text-[#FFF4DE]">
+          <div className="bg-[#FFF5D6] dark:bg-[#20181D] rounded-3xl max-w-lg w-full border border-[#F2B4C0] dark:border-[#422C36] p-6 space-y-4 max-h-[90vh] overflow-y-auto">
+            <div className="flex items-center justify-between pb-3 border-b border-[#F2B4C0]/60 dark:border-[#38202A]">
+              <h3 className="font-bold text-base text-[#2D1F25] dark:text-[#FBEEBF]">
                 {editingEvent.id ? 'Edit Event' : 'Create New Verified Event'}
               </h3>
               <button
@@ -503,7 +503,7 @@ export const AdminPage: React.FC = () => {
                   type="text"
                   value={editingEvent.title || ''}
                   onChange={(e) => setEditingEvent({ ...editingEvent, title: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                 />
               </div>
 
@@ -513,7 +513,7 @@ export const AdminPage: React.FC = () => {
                   <select
                     value={editingEvent.type || 'workshop'}
                     onChange={(e) => setEditingEvent({ ...editingEvent, type: e.target.value as EventType })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                   >
                     <option value="hackathon">Hackathon</option>
                     <option value="workshop">Workshop</option>
@@ -533,7 +533,7 @@ export const AdminPage: React.FC = () => {
                   <select
                     value={editingEvent.status || 'registration_open'}
                     onChange={(e) => setEditingEvent({ ...editingEvent, status: e.target.value as EventStatus })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                   >
                     <option value="registration_open">Registration Open</option>
                     <option value="closing_soon">Closing Soon</option>
@@ -551,7 +551,7 @@ export const AdminPage: React.FC = () => {
                   type="text"
                   value={editingEvent.organiser || ''}
                   onChange={(e) => setEditingEvent({ ...editingEvent, organiser: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                 />
               </div>
 
@@ -561,7 +561,7 @@ export const AdminPage: React.FC = () => {
                   type="text"
                   value={editingEvent.venue || ''}
                   onChange={(e) => setEditingEvent({ ...editingEvent, venue: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                 />
               </div>
 
@@ -573,7 +573,7 @@ export const AdminPage: React.FC = () => {
                     placeholder="2026-10-25T10:00:00Z"
                     value={editingEvent.startDateTime || ''}
                     onChange={(e) => setEditingEvent({ ...editingEvent, startDateTime: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217] font-mono text-[11px]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217] font-mono text-[11px]"
                   />
                 </div>
                 <div>
@@ -583,7 +583,7 @@ export const AdminPage: React.FC = () => {
                     placeholder="2026-10-24T23:59:00Z"
                     value={editingEvent.deadline || ''}
                     onChange={(e) => setEditingEvent({ ...editingEvent, deadline: e.target.value })}
-                    className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217] font-mono text-[11px]"
+                    className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217] font-mono text-[11px]"
                   />
                 </div>
               </div>
@@ -594,7 +594,7 @@ export const AdminPage: React.FC = () => {
                   rows={2}
                   value={editingEvent.description || ''}
                   onChange={(e) => setEditingEvent({ ...editingEvent, description: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                 />
               </div>
 
@@ -604,15 +604,15 @@ export const AdminPage: React.FC = () => {
                   type="url"
                   value={editingEvent.registrationUrl || ''}
                   onChange={(e) => setEditingEvent({ ...editingEvent, registrationUrl: e.target.value })}
-                  className="w-full px-3 py-2 rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
+                  className="w-full px-3 py-2 rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1A1217]"
                 />
               </div>
 
-              <div className="pt-3 flex justify-end gap-2 border-t border-[#FFCED8]/60 dark:border-[#38202A]">
+              <div className="pt-3 flex justify-end gap-2 border-t border-[#F2B4C0]/60 dark:border-[#38202A]">
                 <button
                   type="button"
                   onClick={() => setIsEventModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold text-[#7A616B] hover:bg-[#FFF4DE] rounded-xl"
+                  className="px-4 py-2 text-xs font-semibold text-[#7A616B] hover:bg-[#FBEEBF] rounded-xl"
                 >
                   Cancel
                 </button>

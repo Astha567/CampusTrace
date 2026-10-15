@@ -94,42 +94,47 @@ export const HomePage: React.FC = () => {
 
     if (showSplash) {
     return (
-      <div className="fixed inset-0 z-[100] flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#250D17] via-[#65152D] to-[#180912] px-6 text-center">
+      <div
+        onClick={() => setShowSplash(false)}
+        className="fixed inset-0 z-[100] flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-[#FFF5D6] via-[#F3D3C9] to-[#ECC0C2] dark:from-[#250D17] dark:via-[#65152D] dark:to-[#180912] px-6 text-center cursor-pointer select-none transition-colors"
+      >
         {/* Animated glowing orbs */}
         <div className="pointer-events-none absolute -left-24 -top-24 h-72 w-72 animate-pulse rounded-full bg-[#D94A6E]/30 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 animate-pulse rounded-full bg-[#FFE8C4]/20 blur-3xl" />
+        <div className="pointer-events-none absolute -bottom-24 -right-24 h-80 w-80 animate-pulse rounded-full bg-[#F3D3C9]/40 dark:bg-[#F3D3C9]/20 blur-3xl" />
 
         <div className="relative z-10 mx-auto flex max-w-2xl flex-col items-center gap-6">
-          <div className="flex h-24 w-24 animate-pulse items-center justify-center rounded-full border border-[#FFE8C4]/50 bg-white/10 shadow-[0_0_60px_rgba(255,206,216,0.25)] backdrop-blur-md">
-            <Sparkles className="h-12 w-12 text-[#FFE8C4]" />
+          <div className="flex h-24 w-24 animate-pulse items-center justify-center rounded-full border border-[#D94A6E]/30 dark:border-[#F3D3C9]/50 bg-white/40 dark:bg-white/10 shadow-[0_0_60px_rgba(242,180,192,0.35)] backdrop-blur-md">
+            <Sparkles className="h-12 w-12 text-[#D94A6E] dark:text-[#F3D3C9]" />
           </div>
 
-          <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#FFCED8]">
+          <p className="text-xs font-bold uppercase tracking-[0.35em] text-[#8C203B] dark:text-[#F2B4C0]">
             Team Offshore Presents
           </p>
 
-          <h1 className="text-4xl font-extrabold tracking-tight text-[#FFF4DE] sm:text-6xl">
+          <h1 className="text-4xl font-extrabold tracking-tight text-[#2D1F25] dark:text-[#FBEEBF] sm:text-6xl">
             Welcome to
-            <span className="mt-2 block bg-gradient-to-r from-[#FFCED8] via-[#FFE8C4] to-white bg-clip-text text-transparent">
+            <span className="mt-2 block bg-gradient-to-r from-[#D94A6E] via-[#BF3659] to-[#8C203B] dark:from-[#F2B4C0] dark:via-[#F3D3C9] dark:to-white bg-clip-text text-transparent">
               CampusTrace
             </span>
           </h1>
 
-          <p className="max-w-lg text-sm leading-7 text-[#F5DCE5] sm:text-base">
+          <p className="max-w-lg text-sm leading-7 text-[#5C454F] dark:text-[#F5DCE5] sm:text-base font-medium">
             Your campus. Your community. Everything in one place.
             Discover classrooms, explore events, and find your way around campus.
           </p>
 
           <div className="mt-3 flex items-center gap-3">
-            <span className="h-2 w-2 animate-pulse rounded-full bg-[#FFE8C4]" />
-            <span className="text-xs font-medium tracking-widest text-[#FFCED8]">
+            <span className="h-2 w-2 animate-pulse rounded-full bg-[#D94A6E] dark:bg-[#F3D3C9]" />
+            <span className="text-xs font-semibold tracking-widest text-[#8C203B] dark:text-[#F2B4C0]">
               PREPARING YOUR CAMPUS EXPERIENCE
             </span>
           </div>
 
-          <div className="mt-2 h-1.5 w-48 overflow-hidden rounded-full bg-white/15">
-            <div className="h-full w-full origin-left animate-pulse rounded-full bg-gradient-to-r from-[#D94A6E] via-[#FFE8C4] to-[#FFCED8]" />
+          <div className="mt-2 h-1.5 w-48 overflow-hidden rounded-full bg-[#2D1F25]/10 dark:bg-white/15">
+            <div className="h-full w-full origin-left animate-pulse rounded-full bg-gradient-to-r from-[#D94A6E] via-[#F3D3C9] to-[#F2B4C0]" />
           </div>
+
+          <span className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-1">Tap anywhere to enter</span>
         </div>
       </div>
     );
@@ -138,40 +143,40 @@ export const HomePage: React.FC = () => {
   return (
     <div className="space-y-8 pb-16"> 
       {/* Hero Section styled with Palette */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#8C1E37] via-[#C73356] to-[#42111E] text-white p-6 sm:p-10 shadow-xl border border-[#FFCED8]/40">
+      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#8C1E37] via-[#C73356] to-[#42111E] text-white p-6 sm:p-10 shadow-xl border border-[#F2B4C0]/40">
         {/* Luminous Glow Orbs from palette */}
-        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 rounded-full bg-[#FFE8C4]/25 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#FFCED8]/30 blur-3xl pointer-events-none" />
+        <div className="absolute top-0 right-0 -mt-12 -mr-12 w-80 h-80 rounded-full bg-[#F3D3C9]/25 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-0 -mb-12 -ml-12 w-80 h-80 rounded-full bg-[#F2B4C0]/30 blur-3xl pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#FFDDDD]/25 text-[#FFF4DE] border border-[#FFCED8]/40 backdrop-blur-sm">
-            <span className="w-2 h-2 rounded-full bg-[#FFE8C4] animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold bg-[#ECC0C2]/25 text-[#FBEEBF] border border-[#F2B4C0]/40 backdrop-blur-sm">
+            <span className="w-2 h-2 rounded-full bg-[#F3D3C9] animate-pulse" />
             CampusTrace • University Life Guide by Team Offshore
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#FFFDF9]">
+          <h1 className="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight text-[#FFF5D6]">
             Campus Navigation & University Life in One Place.
           </h1>
 
-          <p className="text-[#FFDDDD] text-sm sm:text-base leading-relaxed max-w-2xl font-medium">
+          <p className="text-[#ECC0C2] text-sm sm:text-base leading-relaxed max-w-2xl font-medium">
             Find lecture halls across 6 blocks, track verified club deadlines, explore interactive 2D floor plans, and get grounded answers from the CampusTrace assistant.
           </p>
 
           {/* Unified Smart Search Bar */}
           <div className="pt-2 relative">
-            <div className="relative flex items-center bg-white/15 backdrop-blur-md border border-[#FFCED8]/50 rounded-2xl p-1.5 focus-within:ring-2 focus-within:ring-[#FFE8C4] focus-within:border-transparent transition shadow-lg">
-              <Search className="w-5 h-5 text-[#FFE8C4] ml-3 shrink-0" />
+            <div className="relative flex items-center bg-white/15 backdrop-blur-md border border-[#F2B4C0]/50 rounded-2xl p-1.5 focus-within:ring-2 focus-within:ring-[#F3D3C9] focus-within:border-transparent transition shadow-lg">
+              <Search className="w-5 h-5 text-[#F3D3C9] ml-3 shrink-0" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder='Search "Room B-204", "workshops this week", "library hours"...'
-                className="w-full bg-transparent px-3 py-2.5 text-sm sm:text-base text-white placeholder:text-[#FFDDDD]/70 focus:outline-none"
+                className="w-full bg-transparent px-3 py-2.5 text-sm sm:text-base text-white placeholder:text-[#ECC0C2]/70 focus:outline-none"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="px-2.5 py-1 text-xs text-[#FFDDDD] hover:text-white rounded-lg transition"
+                  className="px-2.5 py-1 text-xs text-[#ECC0C2] hover:text-white rounded-lg transition"
                 >
                   Clear
                 </button>
@@ -180,11 +185,11 @@ export const HomePage: React.FC = () => {
 
             {/* Instant Search Dropdown Autocomplete */}
             {searchQuery.trim().length > 0 && (
-              <div className="absolute left-0 right-0 top-full mt-2 bg-[#FFFDF9] dark:bg-[#20181D] text-[#2D1F25] dark:text-[#FFF4DE] rounded-2xl shadow-2xl border border-[#FFCED8] dark:border-[#422C36] p-4 z-30 max-h-96 overflow-y-auto space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute left-0 right-0 top-full mt-2 bg-[#FFF5D6] dark:bg-[#20181D] text-[#2D1F25] dark:text-[#FBEEBF] rounded-2xl shadow-2xl border border-[#F2B4C0] dark:border-[#422C36] p-4 z-30 max-h-96 overflow-y-auto space-y-4 animate-in fade-in slide-in-from-top-2 duration-150">
                 {/* Rooms */}
                 {searchResults.rooms.length > 0 && (
                   <div>
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#A62545] dark:text-[#FFCED8] mb-2 flex items-center gap-1.5">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#A62545] dark:text-[#F2B4C0] mb-2 flex items-center gap-1.5">
                       <MapPin className="w-3.5 h-3.5 text-[#D94A6E]" />
                       Classrooms & Facilities
                     </div>
@@ -196,10 +201,10 @@ export const HomePage: React.FC = () => {
                             setSearchQuery('');
                             navigateToRoomOnMap(building.id, room.id);
                           }}
-                          className="w-full p-2.5 rounded-xl text-left hover:bg-[#FFDDDD]/60 dark:hover:bg-[#2C2128] flex items-center justify-between group transition"
+                          className="w-full p-2.5 rounded-xl text-left hover:bg-[#ECC0C2]/60 dark:hover:bg-[#2C2128] flex items-center justify-between group transition"
                         >
                           <div>
-                            <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE] group-hover:text-[#D94A6E]">
+                            <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF] group-hover:text-[#D94A6E]">
                               {room.number}: {room.name}
                             </div>
                             <div className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -218,7 +223,7 @@ export const HomePage: React.FC = () => {
                 {/* Events */}
                 {searchResults.events.length > 0 && (
                   <div>
-                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#C45E12] dark:text-[#FFE8C4] mb-2 flex items-center gap-1.5">
+                    <div className="text-[11px] font-bold uppercase tracking-wider text-[#C45E12] dark:text-[#F3D3C9] mb-2 flex items-center gap-1.5">
                       <Calendar className="w-3.5 h-3.5 text-[#F59E38]" />
                       Events & Deadlines
                     </div>
@@ -230,17 +235,17 @@ export const HomePage: React.FC = () => {
                             setSearchQuery('');
                             navigateToEvent(evt.id);
                           }}
-                          className="w-full p-2.5 rounded-xl text-left hover:bg-[#FFE8C4]/50 dark:hover:bg-[#2C2128] flex items-center justify-between group transition"
+                          className="w-full p-2.5 rounded-xl text-left hover:bg-[#F3D3C9]/50 dark:hover:bg-[#2C2128] flex items-center justify-between group transition"
                         >
                           <div>
-                            <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE] group-hover:text-[#C45E12]">
+                            <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF] group-hover:text-[#C45E12]">
                               {evt.title}
                             </div>
                             <div className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
                               Deadline: {new Date(evt.deadline).toLocaleDateString()} • {evt.venue}
                             </div>
                           </div>
-                          <span className="text-xs font-semibold text-[#C45E12] dark:text-[#FFE8C4] opacity-0 group-hover:opacity-100 transition">
+                          <span className="text-xs font-semibold text-[#C45E12] dark:text-[#F3D3C9] opacity-0 group-hover:opacity-100 transition">
                             View event →
                           </span>
                         </button>
@@ -254,7 +259,7 @@ export const HomePage: React.FC = () => {
                     No exact room or event matched. Try asking the{' '}
                     <button
                       onClick={() => setActiveTab('assistant')}
-                      className="text-[#D94A6E] dark:text-[#FFCED8] font-bold underline"
+                      className="text-[#D94A6E] dark:text-[#F2B4C0] font-bold underline"
                     >
                       CampusTrace Assistant
                     </button>{' '}
@@ -266,8 +271,8 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Quick Prompts */}
-          <div className="flex flex-wrap gap-2 pt-1 text-xs text-[#FFF4DE]">
-            <span className="text-[#FFDDDD]/80 self-center">Try:</span>
+          <div className="flex flex-wrap gap-2 pt-1 text-xs text-[#FBEEBF]">
+            <span className="text-[#ECC0C2]/80 self-center">Try:</span>
             {[
               'Find Room B-204',
               'Alan Turing Auditorium',
@@ -278,7 +283,7 @@ export const HomePage: React.FC = () => {
               <button
                 key={tag}
                 onClick={() => setSearchQuery(tag)}
-                className="px-2.5 py-1 rounded-xl bg-white/15 hover:bg-white/25 text-[#FFFDF9] transition text-[11px] font-semibold border border-white/20"
+                className="px-2.5 py-1 rounded-xl bg-white/15 hover:bg-white/25 text-[#FFF5D6] transition text-[11px] font-semibold border border-white/20"
               >
                 {tag}
               </button>
@@ -291,13 +296,13 @@ export const HomePage: React.FC = () => {
       <section className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
         <button
           onClick={() => setActiveTab('map')}
-          className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFCED8] dark:border-[#422C36] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
+          className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F2B4C0] dark:border-[#422C36] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-2xl bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] flex items-center justify-center group-hover:scale-110 transition-transform">
             <MapPin className="w-5 h-5" />
           </div>
           <div className="mt-4">
-            <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm group-hover:text-[#D94A6E] transition-colors">
+            <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm group-hover:text-[#D94A6E] transition-colors">
               Campus Map
             </h3>
             <p className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-0.5">
@@ -308,13 +313,13 @@ export const HomePage: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('events')}
-          className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFE8C4] dark:border-[#4A3926] shadow-sm hover:shadow-md hover:border-[#F59E38] text-left group transition flex flex-col justify-between"
+          className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F3D3C9] dark:border-[#4A3926] shadow-sm hover:shadow-md hover:border-[#F59E38] text-left group transition flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-2xl bg-[#FFE8C4] dark:bg-[#3D2C1E] text-[#8C521E] dark:text-[#FFE8C4] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-[#F3D3C9] dark:bg-[#3D2C1E] text-[#8C521E] dark:text-[#F3D3C9] flex items-center justify-center group-hover:scale-110 transition-transform">
             <Calendar className="w-5 h-5" />
           </div>
           <div className="mt-4">
-            <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm group-hover:text-[#C45E12] transition-colors">
+            <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm group-hover:text-[#C45E12] transition-colors">
               Events Hub
             </h3>
             <p className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-0.5">
@@ -325,13 +330,13 @@ export const HomePage: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('assistant')}
-          className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFF4DE] dark:border-[#382E34] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
+          className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#FBEEBF] dark:border-[#382E34] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-2xl bg-[#FFF4DE] dark:bg-[#35252F] text-[#D94A6E] dark:text-[#FFCED8] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-[#FBEEBF] dark:bg-[#35252F] text-[#D94A6E] dark:text-[#F2B4C0] flex items-center justify-center group-hover:scale-110 transition-transform">
             <Sparkles className="w-5 h-5" />
           </div>
           <div className="mt-4">
-            <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm group-hover:text-[#D94A6E] transition-colors">
+            <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm group-hover:text-[#D94A6E] transition-colors">
               AI Assistant
             </h3>
             <p className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-0.5">
@@ -342,13 +347,13 @@ export const HomePage: React.FC = () => {
 
         <button
           onClick={() => setActiveTab('contacts')}
-          className="p-5 rounded-3xl bg-[#FFFDF9] dark:bg-[#20181D] border border-[#FFCED8] dark:border-[#422C36] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
+          className="p-5 rounded-3xl bg-[#FFF5D6] dark:bg-[#20181D] border border-[#F2B4C0] dark:border-[#422C36] shadow-sm hover:shadow-md hover:border-[#D94A6E] text-left group transition flex flex-col justify-between"
         >
-          <div className="w-10 h-10 rounded-2xl bg-[#FFCED8]/70 dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] flex items-center justify-center group-hover:scale-110 transition-transform">
+          <div className="w-10 h-10 rounded-2xl bg-[#F2B4C0]/70 dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] flex items-center justify-center group-hover:scale-110 transition-transform">
             <Users className="w-5 h-5" />
           </div>
           <div className="mt-4">
-            <h3 className="font-bold text-[#2D1F25] dark:text-[#FFF4DE] text-sm group-hover:text-[#D94A6E] transition-colors">
+            <h3 className="font-bold text-[#2D1F25] dark:text-[#FBEEBF] text-sm group-hover:text-[#D94A6E] transition-colors">
               Verified Contacts
             </h3>
             <p className="text-[11px] text-[#7A616B] dark:text-[#BFA5AF] mt-0.5">
@@ -360,17 +365,17 @@ export const HomePage: React.FC = () => {
 
       {/* Saved Events & Deadline Reminders Widget */}
       {savedEventsList.length > 0 && (
-        <section className="bg-gradient-to-r from-[#FFE8C4]/60 via-[#FFF4DE]/70 to-transparent border border-[#FFE8C4] dark:border-[#4A3926] rounded-3xl p-5 sm:p-6 space-y-3">
+        <section className="bg-gradient-to-r from-[#F3D3C9]/60 via-[#FBEEBF]/70 to-transparent border border-[#F3D3C9] dark:border-[#4A3926] rounded-3xl p-5 sm:p-6 space-y-3">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2 text-[#6B350A] dark:text-[#FFE8C4]">
-              <Clock className="w-4 h-4 text-[#C45E12] dark:text-[#FFE8C4]" />
+            <div className="flex items-center gap-2 text-[#6B350A] dark:text-[#F3D3C9]">
+              <Clock className="w-4 h-4 text-[#C45E12] dark:text-[#F3D3C9]" />
               <h2 className="font-bold text-sm sm:text-base">
                 My Saved Opportunities & Deadlines ({savedEventsList.length})
               </h2>
             </div>
             <button
               onClick={() => setActiveTab('calendar')}
-              className="text-xs font-bold text-[#8C3A00] dark:text-[#FFE8C4] hover:underline flex items-center gap-1"
+              className="text-xs font-bold text-[#8C3A00] dark:text-[#F3D3C9] hover:underline flex items-center gap-1"
             >
               Open My Calendar
               <ChevronRight className="w-3.5 h-3.5" />
@@ -382,13 +387,13 @@ export const HomePage: React.FC = () => {
               <div
                 key={evt.id}
                 onClick={() => navigateToEvent(evt.id)}
-                className="p-3.5 rounded-2xl bg-white dark:bg-[#20181D] border border-[#FFE8C4] dark:border-[#4A3926] shadow-sm hover:shadow-md cursor-pointer transition flex items-start justify-between gap-3"
+                className="p-3.5 rounded-2xl bg-white dark:bg-[#20181D] border border-[#F3D3C9] dark:border-[#4A3926] shadow-sm hover:shadow-md cursor-pointer transition flex items-start justify-between gap-3"
               >
                 <div>
-                  <h4 className="font-bold text-xs text-[#2D1F25] dark:text-[#FFF4DE] line-clamp-1">
+                  <h4 className="font-bold text-xs text-[#2D1F25] dark:text-[#FBEEBF] line-clamp-1">
                     {evt.title}
                   </h4>
-                  <div className="text-[11px] text-[#C45E12] dark:text-[#FFE8C4] font-semibold mt-1 flex items-center gap-1">
+                  <div className="text-[11px] text-[#C45E12] dark:text-[#F3D3C9] font-semibold mt-1 flex items-center gap-1">
                     <Clock className="w-3 h-3" />
                     Deadline: {new Date(evt.deadline).toLocaleDateString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                   </div>
@@ -396,7 +401,7 @@ export const HomePage: React.FC = () => {
                     {evt.venue}
                   </div>
                 </div>
-                <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#FFE8C4] text-[#7A3A00] dark:bg-[#382618] dark:text-[#FFE8C4]">
+                <span className="shrink-0 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F3D3C9] text-[#7A3A00] dark:bg-[#382618] dark:text-[#F3D3C9]">
                   {evt.status.replace('_', ' ')}
                 </span>
               </div>
@@ -409,7 +414,7 @@ export const HomePage: React.FC = () => {
       <section className="space-y-4">
         <div className="flex items-center justify-between">
           <div>
-            <h2 className="text-xl sm:text-2xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               Upcoming Events & Opportunities
             </h2>
             <p className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -418,7 +423,7 @@ export const HomePage: React.FC = () => {
           </div>
           <button
             onClick={() => setActiveTab('events')}
-            className="inline-flex items-center gap-1 text-xs font-bold text-[#D94A6E] hover:text-[#BF3659] dark:text-[#FFCED8]"
+            className="inline-flex items-center gap-1 text-xs font-bold text-[#D94A6E] hover:text-[#BF3659] dark:text-[#F2B4C0]"
           >
             View All ({events.length})
             <ArrowRight className="w-3.5 h-3.5" />
@@ -431,11 +436,11 @@ export const HomePage: React.FC = () => {
             return (
               <div
                 key={evt.id}
-                className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8]/70 dark:border-[#422C36] p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-4 group"
+                className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0]/70 dark:border-[#422C36] p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between gap-4 group"
               >
                 <div className="space-y-2.5">
                   <div className="flex items-start justify-between gap-2">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8] dark:border-[#5C2B3C]">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0] dark:border-[#5C2B3C]">
                       {evt.type.replace('_', ' ')}
                     </span>
                     <button
@@ -446,8 +451,8 @@ export const HomePage: React.FC = () => {
                       aria-label={saved ? 'Remove from saved' : 'Save event'}
                       className={`p-1.5 rounded-xl transition ${
                         saved
-                          ? 'text-[#D94A6E] bg-[#FFDDDD] dark:bg-[#3D1E28]'
-                          : 'text-[#8F7580] hover:text-[#D94A6E] hover:bg-[#FFF4DE]'
+                          ? 'text-[#D94A6E] bg-[#ECC0C2] dark:bg-[#3D1E28]'
+                          : 'text-[#8F7580] hover:text-[#D94A6E] hover:bg-[#FBEEBF]'
                       }`}
                     >
                       {saved ? <BookmarkCheck className="w-4 h-4" /> : <Bookmark className="w-4 h-4" />}
@@ -456,7 +461,7 @@ export const HomePage: React.FC = () => {
 
                   <h3
                     onClick={() => navigateToEvent(evt.id)}
-                    className="font-bold text-base text-[#2D1F25] dark:text-[#FFF4DE] group-hover:text-[#D94A6E] cursor-pointer line-clamp-2 transition-colors"
+                    className="font-bold text-base text-[#2D1F25] dark:text-[#FBEEBF] group-hover:text-[#D94A6E] cursor-pointer line-clamp-2 transition-colors"
                   >
                     {evt.title}
                   </h3>
@@ -484,13 +489,13 @@ export const HomePage: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="pt-3 border-t border-[#FFCED8]/40 dark:border-[#38202A] flex items-center justify-between">
-                  <div className="text-[11px] font-semibold text-[#8C3A00] dark:text-[#FFE8C4]">
+                <div className="pt-3 border-t border-[#F2B4C0]/40 dark:border-[#38202A] flex items-center justify-between">
+                  <div className="text-[11px] font-semibold text-[#8C3A00] dark:text-[#F3D3C9]">
                     Closes: {new Date(evt.deadline).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}
                   </div>
                   <button
                     onClick={() => navigateToEvent(evt.id)}
-                    className="text-xs font-bold text-[#D94A6E] dark:text-[#FFCED8] hover:underline inline-flex items-center gap-1"
+                    className="text-xs font-bold text-[#D94A6E] dark:text-[#F2B4C0] hover:underline inline-flex items-center gap-1"
                   >
                     Details
                     <ChevronRight className="w-3 h-3" />
@@ -504,11 +509,11 @@ export const HomePage: React.FC = () => {
 
       {/* Daily Campus Essentials Spotlight */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div className="p-5 rounded-3xl bg-[#FFDDDD]/50 dark:bg-[#2A1C23] border border-[#FFCED8] dark:border-[#422C36] space-y-2">
+        <div className="p-5 rounded-3xl bg-[#ECC0C2]/50 dark:bg-[#2A1C23] border border-[#F2B4C0] dark:border-[#422C36] space-y-2">
           <div className="w-9 h-9 rounded-xl bg-[#D94A6E] text-white flex items-center justify-center">
             <BookOpen className="w-4 h-4" />
           </div>
-          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE]">
+          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF]">
             Central Library (Block D)
           </h4>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -516,17 +521,17 @@ export const HomePage: React.FC = () => {
           </p>
           <button
             onClick={() => navigateToRoomOnMap('blk-d', 'room-d-002')}
-            className="text-xs font-bold text-[#D94A6E] dark:text-[#FFCED8] hover:underline inline-flex items-center gap-1 pt-1"
+            className="text-xs font-bold text-[#D94A6E] dark:text-[#F2B4C0] hover:underline inline-flex items-center gap-1 pt-1"
           >
             Locate Library Pods →
           </button>
         </div>
 
-        <div className="p-5 rounded-3xl bg-[#FFE8C4]/50 dark:bg-[#2F241C] border border-[#FFE8C4] dark:border-[#4A3926] space-y-2">
+        <div className="p-5 rounded-3xl bg-[#F3D3C9]/50 dark:bg-[#2F241C] border border-[#F3D3C9] dark:border-[#4A3926] space-y-2">
           <div className="w-9 h-9 rounded-xl bg-[#F59E38] text-white flex items-center justify-center">
             <Coffee className="w-4 h-4" />
           </div>
-          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE]">
+          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF]">
             Student Union Dining (Block E)
           </h4>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -534,17 +539,17 @@ export const HomePage: React.FC = () => {
           </p>
           <button
             onClick={() => navigateToRoomOnMap('blk-e', 'room-e-001')}
-            className="text-xs font-bold text-[#C45E12] dark:text-[#FFE8C4] hover:underline inline-flex items-center gap-1 pt-1"
+            className="text-xs font-bold text-[#C45E12] dark:text-[#F3D3C9] hover:underline inline-flex items-center gap-1 pt-1"
           >
             Locate Cafeteria →
           </button>
         </div>
 
-        <div className="p-5 rounded-3xl bg-[#FFF4DE]/60 dark:bg-[#29221C] border border-[#FFE8C4] dark:border-[#4A3926] space-y-2">
+        <div className="p-5 rounded-3xl bg-[#FBEEBF]/60 dark:bg-[#29221C] border border-[#F3D3C9] dark:border-[#4A3926] space-y-2">
           <div className="w-9 h-9 rounded-xl bg-[#D94A6E] text-white flex items-center justify-center">
             <ShieldCheck className="w-4 h-4" />
           </div>
-          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE]">
+          <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF]">
             CampusTrace Trust & Accuracy
           </h4>
           <p className="text-xs text-[#5C454F] dark:text-[#C7B0BA] leading-relaxed">
@@ -552,7 +557,7 @@ export const HomePage: React.FC = () => {
           </p>
           <button
             onClick={() => setActiveTab('about')}
-            className="text-xs font-bold text-[#8C203B] dark:text-[#FFCED8] hover:underline inline-flex items-center gap-1 pt-1"
+            className="text-xs font-bold text-[#8C203B] dark:text-[#F2B4C0] hover:underline inline-flex items-center gap-1 pt-1"
           >
             Read Trust Policy →
           </button>

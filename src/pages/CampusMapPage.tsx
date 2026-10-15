@@ -140,27 +140,27 @@ export const CampusMapPage: React.FC = () => {
     showToast(`Focused on ${room.number}: ${room.name}`);
   };
 
-  // Color mapping based on new palette: #FFCED8, #FFDDDD, #FFF4DE, #FFE8C4
+  // Color mapping based on new palette: #F2B4C0, #ECC0C2, #FBEEBF, #F3D3C9
   const getRoomTypeColor = (type: Room['type'], isSelected: boolean) => {
     if (isSelected) {
       return 'fill-[#D94A6E] stroke-[#8C1E37] stroke-[3] text-white';
     }
     switch (type) {
       case 'auditorium':
-        return 'fill-[#FFCED8] hover:fill-[#F8B7C5] dark:fill-[#4A2633] dark:hover:fill-[#5C2E3F] stroke-[#D94A6E]';
+        return 'fill-[#F2B4C0] hover:fill-[#F8B7C5] dark:fill-[#4A2633] dark:hover:fill-[#5C2E3F] stroke-[#D94A6E]';
       case 'lab':
-        return 'fill-[#FFDDDD] hover:fill-[#FFCED8] dark:fill-[#3D1E28] dark:hover:fill-[#4F2634] stroke-[#E08A9E]';
+        return 'fill-[#ECC0C2] hover:fill-[#F2B4C0] dark:fill-[#3D1E28] dark:hover:fill-[#4F2634] stroke-[#E08A9E]';
       case 'classroom':
-        return 'fill-[#FFF4DE] hover:fill-[#FFE8C4] dark:fill-[#382B21] dark:hover:fill-[#4A382A] stroke-[#E5C492]';
+        return 'fill-[#FBEEBF] hover:fill-[#F3D3C9] dark:fill-[#382B21] dark:hover:fill-[#4A382A] stroke-[#E5C492]';
       case 'cafeteria':
-        return 'fill-[#FFE8C4] hover:fill-[#FDD59F] dark:fill-[#3D2C1E] dark:hover:fill-[#523B28] stroke-[#F59E38]';
+        return 'fill-[#F3D3C9] hover:fill-[#FDD59F] dark:fill-[#3D2C1E] dark:hover:fill-[#523B28] stroke-[#F59E38]';
       case 'library_zone':
-        return 'fill-[#FFF4DE] hover:fill-[#FFE8C4] dark:fill-[#2F2922] dark:hover:fill-[#40382E] stroke-[#D4AF37]';
+        return 'fill-[#FBEEBF] hover:fill-[#F3D3C9] dark:fill-[#2F2922] dark:hover:fill-[#40382E] stroke-[#D4AF37]';
       case 'student_services':
       case 'admin_office':
-        return 'fill-[#FFDDDD] hover:fill-[#FFCED8] dark:fill-[#3D1E28] dark:hover:fill-[#4F2634] stroke-[#D94A6E]';
+        return 'fill-[#ECC0C2] hover:fill-[#F2B4C0] dark:fill-[#3D1E28] dark:hover:fill-[#4F2634] stroke-[#D94A6E]';
       default:
-        return 'fill-[#FFF9F2] hover:fill-[#FFDDDD] dark:fill-[#261E23] dark:hover:fill-[#33272F] stroke-[#FFCED8]';
+        return 'fill-[#FFF5D6] hover:fill-[#ECC0C2] dark:fill-[#261E23] dark:hover:fill-[#33272F] stroke-[#F2B4C0]';
     }
   };
 
@@ -170,10 +170,10 @@ export const CampusMapPage: React.FC = () => {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FFF4DE]">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-[#2D1F25] dark:text-[#FBEEBF]">
               CampusTrace Map & Floor Plans
             </h1>
-            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] border border-[#FFCED8] dark:border-[#5C2B3C]">
+            <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] border border-[#F2B4C0] dark:border-[#5C2B3C]">
               <CheckCircle2 className="w-3 h-3 text-[#D94A6E]" />
               Verified CAD 2026
             </span>
@@ -193,7 +193,7 @@ export const CampusMapPage: React.FC = () => {
             className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border transition shadow-sm ${
               directionsMode
                 ? 'bg-[#D94A6E] border-[#D94A6E] text-white shadow-[#D94A6E]/25'
-                : 'bg-white dark:bg-[#20181D] border-[#FFCED8] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FFF4DE] hover:bg-[#FFF4DE]'
+                : 'bg-white dark:bg-[#20181D] border-[#F2B4C0] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FBEEBF] hover:bg-[#FBEEBF]'
             }`}
           >
             <Navigation className="w-4 h-4 text-[#D94A6E] [div>&]:text-white" />
@@ -203,9 +203,9 @@ export const CampusMapPage: React.FC = () => {
           {currentBuilding && (
             <button
               onClick={() => setShowThreeD(true)}
-              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#D94A6E] hover:bg-[#BF3659] text-white transition shadow-sm border border-[#FFCED8]"
+              className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#D94A6E] hover:bg-[#BF3659] text-white transition shadow-sm border border-[#F2B4C0]"
             >
-              <Box className="w-4 h-4 text-[#FFE8C4]" />
+              <Box className="w-4 h-4 text-[#F3D3C9]" />
               <span>3D View (Experimental)</span>
             </button>
           )}
@@ -214,14 +214,14 @@ export const CampusMapPage: React.FC = () => {
 
       {/* Autocomplete Search Bar */}
       <div className="relative">
-        <div className="relative flex items-center bg-white dark:bg-[#20181D] rounded-2xl border border-[#FFCED8] dark:border-[#422C36] p-2 shadow-sm focus-within:ring-2 focus-within:ring-[#D94A6E] transition">
-          <Search className="w-5 h-5 text-[#C45E12] dark:text-[#FFE8C4] ml-2 shrink-0" />
+        <div className="relative flex items-center bg-white dark:bg-[#20181D] rounded-2xl border border-[#F2B4C0] dark:border-[#422C36] p-2 shadow-sm focus-within:ring-2 focus-within:ring-[#D94A6E] transition">
+          <Search className="w-5 h-5 text-[#C45E12] dark:text-[#F3D3C9] ml-2 shrink-0" />
           <input
             type="text"
             value={roomSearchQuery}
             onChange={(e) => setRoomSearchQuery(e.target.value)}
             placeholder='Find room or lab in CampusTrace (e.g. "B-204", "Robotics Arena", "Auditorium", "Library")...'
-            className="w-full bg-transparent px-3 py-1.5 text-sm text-[#2D1F25] dark:text-[#FFF4DE] placeholder:text-[#A8929B] focus:outline-none"
+            className="w-full bg-transparent px-3 py-1.5 text-sm text-[#2D1F25] dark:text-[#FBEEBF] placeholder:text-[#A8929B] focus:outline-none"
           />
           {roomSearchQuery && (
             <button
@@ -235,15 +235,15 @@ export const CampusMapPage: React.FC = () => {
 
         {/* Autocomplete Results Dropdown */}
         {searchResults.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-2 bg-[#FFFDF9] dark:bg-[#20181D] rounded-2xl shadow-2xl border border-[#FFCED8] dark:border-[#422C36] p-3 z-30 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150">
+          <div className="absolute top-full left-0 right-0 mt-2 bg-[#FFF5D6] dark:bg-[#20181D] rounded-2xl shadow-2xl border border-[#F2B4C0] dark:border-[#422C36] p-3 z-30 space-y-1 animate-in fade-in slide-in-from-top-2 duration-150">
             {searchResults.map(({ building, floor, room }) => (
               <button
                 key={room.id}
                 onClick={() => selectRoomFromSearch(building, floor, room)}
-                className="w-full text-left p-2.5 rounded-xl hover:bg-[#FFDDDD]/60 dark:hover:bg-[#2C2128] transition flex items-center justify-between group"
+                className="w-full text-left p-2.5 rounded-xl hover:bg-[#ECC0C2]/60 dark:hover:bg-[#2C2128] transition flex items-center justify-between group"
               >
                 <div>
-                  <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE] group-hover:text-[#D94A6E]">
+                  <div className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF] group-hover:text-[#D94A6E]">
                     {room.number}: {room.name}
                   </div>
                   <div className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
@@ -260,7 +260,7 @@ export const CampusMapPage: React.FC = () => {
       </div>
 
       {/* Mobile Mode Switcher Tabs */}
-      <div className="flex sm:hidden p-1 bg-[#FFDDDD]/60 dark:bg-[#2C2128] rounded-2xl border border-[#FFCED8]/50">
+      <div className="flex sm:hidden p-1 bg-[#ECC0C2]/60 dark:bg-[#2C2128] rounded-2xl border border-[#F2B4C0]/50">
         <button
           onClick={() => setMobileView('campus')}
           className={`flex-1 py-2 text-xs font-bold rounded-xl transition ${
@@ -297,16 +297,16 @@ export const CampusMapPage: React.FC = () => {
 
       {/* Directions Control Bar (when activated) */}
       {directionsMode && (
-        <div className="bg-[#FFF4DE] dark:bg-[#2A201A] border border-[#FFE8C4] dark:border-[#4A3926] rounded-3xl p-4 sm:p-5 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
+        <div className="bg-[#FBEEBF] dark:bg-[#2A201A] border border-[#F3D3C9] dark:border-[#4A3926] rounded-3xl p-4 sm:p-5 flex flex-col md:flex-row items-stretch md:items-center justify-between gap-4">
           <div className="flex flex-col sm:flex-row items-center gap-3 flex-1">
             <div className="w-full sm:w-1/2 space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-[#7A3A00] dark:text-[#FFE8C4] flex items-center gap-1">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-[#7A3A00] dark:text-[#F3D3C9] flex items-center gap-1">
                 <Footprints className="w-3.5 h-3.5 text-[#D94A6E]" /> Start Location:
               </label>
               <select
                 value={startBuildingId}
                 onChange={(e) => setStartBuildingId(e.target.value)}
-                className="w-full text-xs font-semibold rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1E171C] p-2 text-[#2D1F25] dark:text-[#FFF4DE] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
+                className="w-full text-xs font-semibold rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1E171C] p-2 text-[#2D1F25] dark:text-[#FBEEBF] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
               >
                 {buildings.map((b) => (
                   <option key={b.id} value={b.id}>
@@ -319,13 +319,13 @@ export const CampusMapPage: React.FC = () => {
             <div className="hidden sm:block text-[#D94A6E] font-bold">→</div>
 
             <div className="w-full sm:w-1/2 space-y-1">
-              <label className="text-[11px] font-bold uppercase tracking-wider text-[#7A3A00] dark:text-[#FFE8C4] flex items-center gap-1">
+              <label className="text-[11px] font-bold uppercase tracking-wider text-[#7A3A00] dark:text-[#F3D3C9] flex items-center gap-1">
                 <MapPin className="w-3.5 h-3.5 text-[#D94A6E]" /> Destination:
               </label>
               <select
                 value={destBuildingId}
                 onChange={(e) => setDestBuildingId(e.target.value)}
-                className="w-full text-xs font-semibold rounded-xl border border-[#FFCED8] dark:border-[#422C36] bg-white dark:bg-[#1E171C] p-2 text-[#2D1F25] dark:text-[#FFF4DE] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
+                className="w-full text-xs font-semibold rounded-xl border border-[#F2B4C0] dark:border-[#422C36] bg-white dark:bg-[#1E171C] p-2 text-[#2D1F25] dark:text-[#FBEEBF] focus:outline-none focus:ring-2 focus:ring-[#D94A6E]"
               >
                 {buildings.map((b) => (
                   <option key={b.id} value={b.id}>
@@ -337,10 +337,10 @@ export const CampusMapPage: React.FC = () => {
           </div>
 
           {activeRoute && (
-            <div className="bg-white dark:bg-[#20181D] px-4 py-2.5 rounded-2xl border border-[#FFCED8] dark:border-[#422C36] flex items-center gap-4 text-xs shrink-0 justify-between">
+            <div className="bg-white dark:bg-[#20181D] px-4 py-2.5 rounded-2xl border border-[#F2B4C0] dark:border-[#422C36] flex items-center gap-4 text-xs shrink-0 justify-between">
               <div>
                 <span className="text-[#7A616B] dark:text-[#BFA5AF] block text-[10px]">Estimated Walk</span>
-                <span className="font-extrabold text-[#D94A6E] dark:text-[#FFCED8] text-sm">
+                <span className="font-extrabold text-[#D94A6E] dark:text-[#F2B4C0] text-sm">
                   {activeRoute.time} ({activeRoute.distance})
                 </span>
               </div>
@@ -360,14 +360,14 @@ export const CampusMapPage: React.FC = () => {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* LEFT COLUMN: Campus Overview Map (SVG based) */}
         <div
-          className={`lg:col-span-7 bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-4 sm:p-6 shadow-sm flex flex-col justify-between ${
+          className={`lg:col-span-7 bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-4 sm:p-6 shadow-sm flex flex-col justify-between ${
             mobileView !== 'campus' ? 'hidden sm:flex' : 'flex'
           }`}
         >
-          <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#FFCED8]/50 dark:border-[#38202A]">
+          <div className="flex items-center justify-between pb-3 mb-2 border-b border-[#F2B4C0]/50 dark:border-[#38202A]">
             <div className="flex items-center gap-2">
               <Compass className="w-4 h-4 text-[#D94A6E]" />
-              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FFF4DE] text-sm sm:text-base">
+              <h3 className="font-extrabold text-[#2D1F25] dark:text-[#FBEEBF] text-sm sm:text-base">
                 Campus Overview Layout
               </h3>
             </div>
@@ -377,25 +377,25 @@ export const CampusMapPage: React.FC = () => {
           </div>
 
           {/* Interactive SVG Campus Map styled with Palette */}
-          <div className="relative w-full aspect-[4/3] bg-[#FFFDF9] dark:bg-[#1A1217] rounded-2xl border border-[#FFCED8]/70 dark:border-[#422C36] overflow-hidden shadow-inner">
+          <div className="relative w-full aspect-[4/3] bg-[#FFF5D6] dark:bg-[#1A1217] rounded-2xl border border-[#F2B4C0]/70 dark:border-[#422C36] overflow-hidden shadow-inner">
             <svg
               viewBox="0 0 100 100"
               className="w-full h-full select-none cursor-pointer"
               aria-label="University Campus Map"
             >
               {/* Campus Grounds / Landscaping */}
-              <rect x="0" y="0" width="100" height="100" fill="#FFFDF9" className="dark:fill-[#1A1217]" />
+              <rect x="0" y="0" width="100" height="100" fill="#FFF5D6" className="dark:fill-[#1A1217]" />
 
               {/* Water feature / Lake styled in delicate blush */}
-              <ellipse cx="48" cy="20" rx="14" ry="7" fill="#FFDDDD" stroke="#FFCED8" strokeWidth="0.5" className="dark:fill-[#381D26] dark:stroke-[#592635]" />
-              <text x="48" y="21" fontSize="2.2" textAnchor="middle" fill="#8C203B" className="dark:fill-[#FFCED8] font-bold">
+              <ellipse cx="48" cy="20" rx="14" ry="7" fill="#ECC0C2" stroke="#F2B4C0" strokeWidth="0.5" className="dark:fill-[#381D26] dark:stroke-[#592635]" />
+              <text x="48" y="21" fontSize="2.2" textAnchor="middle" fill="#8C203B" className="dark:fill-[#F2B4C0] font-bold">
                 Campus Lake
               </text>
 
               {/* Central Clock Tower & Fountain in cream/rose */}
-              <circle cx="50" cy="50" r="4.5" fill="#FFF4DE" stroke="#FFE8C4" strokeWidth="0.5" className="dark:fill-[#33261C] dark:stroke-[#4A382A]" />
+              <circle cx="50" cy="50" r="4.5" fill="#FBEEBF" stroke="#F3D3C9" strokeWidth="0.5" className="dark:fill-[#33261C] dark:stroke-[#4A382A]" />
               <circle cx="50" cy="50" r="1.5" fill="#D94A6E" />
-              <text x="50" y="56" fontSize="1.8" textAnchor="middle" fill="#6B350A" className="dark:fill-[#FFE8C4] font-semibold">
+              <text x="50" y="56" fontSize="1.8" textAnchor="middle" fill="#6B350A" className="dark:fill-[#F3D3C9] font-semibold">
                 Central Fountain
               </text>
 
@@ -403,7 +403,7 @@ export const CampusMapPage: React.FC = () => {
               <path
                 d="M 26 32 L 48 48 L 74 72 M 68 28 L 48 48 L 46 84 M 22 70 L 46 84 M 26 32 L 68 28"
                 fill="none"
-                stroke="#FFE8C4"
+                stroke="#F3D3C9"
                 strokeWidth="1.0"
                 strokeDasharray="1.5,1.5"
                 className="dark:stroke-[#4A3926]"
@@ -447,12 +447,12 @@ export const CampusMapPage: React.FC = () => {
                         isSelected
                           ? '#D94A6E'
                           : isStart
-                          ? '#FFE8C4'
+                          ? '#F3D3C9'
                           : isDest
-                          ? '#FFCED8'
-                          : '#FFF4DE'
+                          ? '#F2B4C0'
+                          : '#FBEEBF'
                       }
-                      stroke={isSelected ? '#8C1E37' : '#FFCED8'}
+                      stroke={isSelected ? '#8C1E37' : '#F2B4C0'}
                       strokeWidth={isSelected ? '0.9' : '0.5'}
                       className="transition-all duration-200 dark:stroke-[#592635]"
                     />
@@ -465,7 +465,7 @@ export const CampusMapPage: React.FC = () => {
                       fontWeight="bold"
                       textAnchor="middle"
                       fill={isSelected ? '#FFFFFF' : '#2D1F25'}
-                      className="dark:fill-[#FFF4DE]"
+                      className="dark:fill-[#FBEEBF]"
                     >
                       {b.shortCode}
                     </text>
@@ -477,8 +477,8 @@ export const CampusMapPage: React.FC = () => {
                       fontSize="1.6"
                       fontWeight="600"
                       textAnchor="middle"
-                      fill={isSelected ? '#FFE8C4' : '#8C203B'}
-                      className="dark:fill-[#FFCED8]"
+                      fill={isSelected ? '#F3D3C9' : '#8C203B'}
+                      className="dark:fill-[#F2B4C0]"
                     >
                       {b.category}
                     </text>
@@ -497,7 +497,7 @@ export const CampusMapPage: React.FC = () => {
           </div>
 
           {/* Building Quick selector pills below map */}
-          <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-3 border-t border-[#FFCED8]/50 dark:border-[#38202A]">
+          <div className="flex flex-wrap items-center gap-1.5 mt-4 pt-3 border-t border-[#F2B4C0]/50 dark:border-[#38202A]">
             <span className="text-xs text-[#7A616B] font-bold mr-1">Select:</span>
             {buildings.map((b) => (
               <button
@@ -509,7 +509,7 @@ export const CampusMapPage: React.FC = () => {
                 className={`px-2.5 py-1 rounded-xl text-xs font-semibold transition border ${
                   selectedBuildingId === b.id
                     ? 'bg-[#D94A6E] border-[#D94A6E] text-white'
-                    : 'bg-[#FFF4DE] dark:bg-[#2A1F26] border-[#FFE8C4] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FFF4DE] hover:bg-[#FFDDDD]'
+                    : 'bg-[#FBEEBF] dark:bg-[#2A1F26] border-[#F3D3C9] dark:border-[#422C36] text-[#2D1F25] dark:text-[#FBEEBF] hover:bg-[#ECC0C2]'
                 }`}
               >
                 {b.shortCode}
@@ -525,19 +525,19 @@ export const CampusMapPage: React.FC = () => {
           }`}
         >
           {currentBuilding && currentFloor && (
-            <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-5 sm:p-6 shadow-sm space-y-4">
+            <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-5 sm:p-6 shadow-sm space-y-4">
               {/* Building Header */}
               <div className="flex items-start justify-between gap-3">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8]">
+                    <span className="text-xs font-bold px-2 py-0.5 rounded-md bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0]">
                       {currentBuilding.shortCode}
                     </span>
                     <span className="text-xs text-[#7A616B] dark:text-[#BFA5AF]">
                       {currentBuilding.openHours}
                     </span>
                   </div>
-                  <h2 className="text-lg font-bold text-[#2D1F25] dark:text-[#FFF4DE] mt-1">
+                  <h2 className="text-lg font-bold text-[#2D1F25] dark:text-[#FBEEBF] mt-1">
                     {currentBuilding.name}
                   </h2>
                 </div>
@@ -552,7 +552,7 @@ export const CampusMapPage: React.FC = () => {
               </div>
 
               {/* Floor Level Selector */}
-              <div className="flex items-center gap-2 p-1 bg-[#FFF4DE] dark:bg-[#2A1F26] rounded-2xl border border-[#FFE8C4] dark:border-[#422C36]">
+              <div className="flex items-center gap-2 p-1 bg-[#FBEEBF] dark:bg-[#2A1F26] rounded-2xl border border-[#F3D3C9] dark:border-[#422C36]">
                 {currentBuilding.floors.map((fl) => (
                   <button
                     key={fl.id}
@@ -579,7 +579,7 @@ export const CampusMapPage: React.FC = () => {
               </div>
 
               {/* SVG 2D Floor Plan Canvas with Palette Styling */}
-              <div className="relative w-full aspect-[5/3] bg-[#FFFDF9] dark:bg-[#1A1217] rounded-2xl border border-[#FFCED8] dark:border-[#422C36] p-2 overflow-hidden shadow-inner">
+              <div className="relative w-full aspect-[5/3] bg-[#FFF5D6] dark:bg-[#1A1217] rounded-2xl border border-[#F2B4C0] dark:border-[#422C36] p-2 overflow-hidden shadow-inner">
                 <svg
                   viewBox="0 0 520 280"
                   className="w-full h-full select-none"
@@ -593,7 +593,7 @@ export const CampusMapPage: React.FC = () => {
                     height="260"
                     rx="12"
                     fill="none"
-                    stroke="#FFCED8"
+                    stroke="#F2B4C0"
                     strokeWidth="3"
                     className="dark:stroke-[#592635]"
                   />
@@ -604,7 +604,7 @@ export const CampusMapPage: React.FC = () => {
                     y="125"
                     width="490"
                     height="30"
-                    fill="#FFF4DE"
+                    fill="#FBEEBF"
                     className="dark:fill-[#2A201A]"
                   />
                   <text
@@ -613,7 +613,7 @@ export const CampusMapPage: React.FC = () => {
                     fontSize="11"
                     textAnchor="middle"
                     fill="#8C521E"
-                    className="dark:fill-[#FFE8C4] font-bold tracking-widest uppercase"
+                    className="dark:fill-[#F3D3C9] font-bold tracking-widest uppercase"
                   >
                     Main Hallway Corridor
                   </text>
@@ -663,7 +663,7 @@ export const CampusMapPage: React.FC = () => {
                           fontWeight="bold"
                           textAnchor="middle"
                           fill={isSelected ? '#FFFFFF' : '#2D1F25'}
-                          className="dark:fill-[#FFF4DE]"
+                          className="dark:fill-[#FBEEBF]"
                         >
                           {room.number}
                         </text>
@@ -675,7 +675,7 @@ export const CampusMapPage: React.FC = () => {
                           fontSize="9"
                           fontWeight="500"
                           textAnchor="middle"
-                          fill={isSelected ? '#FFE8C4' : '#7A616B'}
+                          fill={isSelected ? '#F3D3C9' : '#7A616B'}
                           className="dark:fill-[#BFA5AF]"
                         >
                           {room.name.length > 20 ? room.name.slice(0, 18) + '...' : room.name}
@@ -688,14 +688,14 @@ export const CampusMapPage: React.FC = () => {
 
               {/* Selected Room Details Card */}
               {focusedRoom ? (
-                <div className="bg-[#FFDDDD]/50 dark:bg-[#2F1F27] border border-[#FFCED8] dark:border-[#4F2634] rounded-2xl p-4 space-y-2 animate-in fade-in duration-150">
+                <div className="bg-[#ECC0C2]/50 dark:bg-[#2F1F27] border border-[#F2B4C0] dark:border-[#4F2634] rounded-2xl p-4 space-y-2 animate-in fade-in duration-150">
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <div className="flex items-center gap-2">
-                        <span className="font-extrabold text-base text-[#2D1F25] dark:text-[#FFF4DE]">
+                        <span className="font-extrabold text-base text-[#2D1F25] dark:text-[#FBEEBF]">
                           {focusedRoom.number}: {focusedRoom.name}
                         </span>
-                        <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-[#FFCED8] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#FFCED8]">
+                        <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded-full bg-[#F2B4C0] text-[#8C203B] dark:bg-[#3D1E28] dark:text-[#F2B4C0]">
                           {focusedRoom.type}
                         </span>
                       </div>
@@ -724,7 +724,7 @@ export const CampusMapPage: React.FC = () => {
                       {focusedRoom.facilities.map((fac) => (
                         <span
                           key={fac}
-                          className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-white dark:bg-[#1E171C] text-[#2D1F25] dark:text-[#FFF4DE] border border-[#FFCED8] dark:border-[#422C36]"
+                          className="px-2 py-0.5 text-[10px] font-semibold rounded-md bg-white dark:bg-[#1E171C] text-[#2D1F25] dark:text-[#FBEEBF] border border-[#F2B4C0] dark:border-[#422C36]"
                         >
                           {fac}
                         </span>
@@ -733,19 +733,19 @@ export const CampusMapPage: React.FC = () => {
                   )}
 
                   {focusedRoom.accessibilityNotes && (
-                    <div className="text-xs text-[#7A3A00] dark:text-[#FFE8C4] bg-[#FFE8C4]/60 dark:bg-[#382618] p-2 rounded-xl border border-[#FFE8C4] dark:border-[#523A25]">
+                    <div className="text-xs text-[#7A3A00] dark:text-[#F3D3C9] bg-[#F3D3C9]/60 dark:bg-[#382618] p-2 rounded-xl border border-[#F3D3C9] dark:border-[#523A25]">
                       ♿ {focusedRoom.accessibilityNotes}
                     </div>
                   )}
 
-                  <div className="text-[11px] text-[#8F7580] pt-1 flex items-center justify-between border-t border-[#FFCED8]/60 dark:border-[#38202A]">
+                  <div className="text-[11px] text-[#8F7580] pt-1 flex items-center justify-between border-t border-[#F2B4C0]/60 dark:border-[#38202A]">
                     <span>Verified: {focusedRoom.lastUpdated}</span>
                     {focusedRoom.sourceUrl && (
                       <a
                         href={focusedRoom.sourceUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[#D94A6E] dark:text-[#FFCED8] hover:underline inline-flex items-center gap-1 font-semibold"
+                        className="text-[#D94A6E] dark:text-[#F2B4C0] hover:underline inline-flex items-center gap-1 font-semibold"
                       >
                         Source Link <ExternalLink className="w-3 h-3" />
                       </a>
@@ -762,10 +762,10 @@ export const CampusMapPage: React.FC = () => {
 
           {/* Walking Route Step-by-Step Card (When Directions are Active) */}
           {directionsMode && activeRoute && (
-            <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#FFCED8] dark:border-[#422C36] p-5 shadow-sm space-y-3">
-              <div className="flex items-center gap-2 text-[#D94A6E] dark:text-[#FFCED8]">
+            <div className="bg-white dark:bg-[#20181D] rounded-3xl border border-[#F2B4C0] dark:border-[#422C36] p-5 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 text-[#D94A6E] dark:text-[#F2B4C0]">
                 <Footprints className="w-4 h-4" />
-                <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FFF4DE]">
+                <h4 className="font-bold text-sm text-[#2D1F25] dark:text-[#FBEEBF]">
                   Step-by-Step Walking Route
                 </h4>
               </div>
@@ -773,7 +773,7 @@ export const CampusMapPage: React.FC = () => {
               <div className="space-y-2 text-xs text-[#5C454F] dark:text-[#D9C4CC]">
                 {activeRoute.steps.map((step, idx) => (
                   <div key={idx} className="flex items-start gap-2.5">
-                    <span className="w-5 h-5 rounded-full bg-[#FFDDDD] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#FFCED8] text-[11px] font-bold flex items-center justify-center shrink-0">
+                    <span className="w-5 h-5 rounded-full bg-[#ECC0C2] dark:bg-[#3D1E28] text-[#8C203B] dark:text-[#F2B4C0] text-[11px] font-bold flex items-center justify-center shrink-0">
                       {idx + 1}
                     </span>
                     <span className="leading-relaxed">{step}</span>
