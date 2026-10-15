@@ -4,6 +4,19 @@
 
 **Developed by Team Offshore**
 
+## 👨‍💻 Team Offshore — Team Members & Roles
+
+| Team Member      | Role                             |
+| ---------------- | -------------------------------- |
+| Avni Gupta       | Backend Developer                |
+| Astha Yadav      | AI/ML Developer                  |
+| Bhoomi Choudhary | UI/UX Designer & Researcher      |
+| Avni Gaur        | Database Developer               |
+| Dhwani Sharma    | Frontend Developer               |
+| Himangana Mishra | Testing & Quality Assurance (QA) |
+
+**Team Offshore** is focused on building a student-friendly, accessible, and reliable digital campus experience.
+
 CampusTrace is a mobile-friendly web application that helps students navigate their campus, discover events and opportunities, track deadlines, find faculty contacts, and get reliable answers through an AI-powered campus assistant.
 
 Our goal is to make campus information easier to find, access, and manage — all in one place.
@@ -88,19 +101,6 @@ Explore the interactive campus map, discover events and opportunities, manage de
 | Build Tools          | Vite                                  |
 
 The project uses a centralized data service, making it easier to integrate a database such as Supabase or Firebase in the future.
-
-## 👨‍💻 Team Offshore — Team Members & Roles
-
-| Team Member      | Role                             |
-| ---------------- | -------------------------------- |
-| Avni Gupta       | Backend Developer                |
-| Astha Yadav      | AI/ML Developer                  |
-| Bhoomi Choudhary | UI/UX Designer & Researcher      |
-| Avni Gaur        | Database Developer               |
-| Dhwani Sharma    | Frontend Developer               |
-| Himangana Mishra | Testing & Quality Assurance (QA) |
-
-**Team Offshore** is focused on building a student-friendly, accessible, and reliable digital campus experience.
 
 ##
 
