@@ -1,159 +1,174 @@
 # CampusTrace 🗺️📍
-*A Student-Friendly Digital Guide to University Life by Team Offshore*
 
-**CampusTrace** is a mobile-first, accessible web application designed to help university students navigate campus buildings, discover verified opportunities and deadlines, export calendar reminders, look up faculty/student leads, and receive grounded answers from an AI campus assistant.
+### A Student-Friendly Digital Guide to University Life
 
----
+**Developed by Team Offshore**
 
-## 🌟 Key Features
+CampusTrace is a mobile-friendly web application that helps students navigate their campus, discover events and opportunities, track deadlines, find faculty contacts, and get reliable answers through an AI-powered campus assistant.
 
-1. **Interactive Campus Map & SVG Floor Plans**
-   - 2D SVG Campus layout with clickable buildings across 6 blocks.
-   - Interactive SVG floor plans with room highlights (classrooms, labs, offices, cafeteria, student services).
-   - Instant Room Search ("Find Room B-204") with autocomplete, auto-selection of building, floor level, and room pulsing.
-   - Step-by-step walking directions prototype with estimated walking time and distance.
-   - Experimental 3D View modal using Three.js with exploded floor stack controls.
+Our goal is to make campus information easier to find, access, and manage — all in one place.
 
-2. **Events & Opportunities Hub**
-   - 20 realistic verified events: hackathons, workshops, seminars, auditions, internships, and fests.
-   - Filters by category, department, registration status (open / closing soon / closed), and text search.
-   - Status indicators with clear expiration/cancellation states.
-   - Direct integration: Save/bookmark, official registration links, and "Show on Map" button.
+## 🌐 Live Demo
 
-3. **Personal Calendar & Reminders**
-   - Month view and agenda list highlighting **Event Dates** (indigo) and **Registration Deadlines** (amber) in distinctive colors.
-   - "My Opportunities" dashboard with live countdown clocks (e.g. "Closes in 2d 4h").
-   - 1-click **.ics** (iCalendar) export for single or all saved events.
-   - Direct "Add to Google Calendar" web link generator.
-   - In-app reminder settings (1 day / 1 hour before) and browser notification permission prompt.
+**Explore CampusTrace here:**
 
-4. **Grounded AI Campus Assistant (Gemini API via `@google/genai`)**
-   - Strictly grounded retrieval: performs fuzzy keyword search (Fuse.js) over verified local campus records and passes only matched context to the Gemini model on the server.
-   - System instruction strictly prohibits inventing rooms, contacts, or dates; when uncertain, directs students to official offices.
-   - Interactive link chips inside assistant responses navigate directly to map locations, event details, or contact directory cards.
-   - Resilient fallback engine ensures verified answers even if offline or without an API key.
+🔗 [Launch CampusTrace — Live Demo](https://everywhere-door-campus-guide-930800913027.asia-east1.run.app/)
 
-5. **Verified Faculty & Student Leads Directory**
-   - Filterable directory of faculty advisors and student club presidents.
-   - Strict privacy rule: direct messaging (WhatsApp) links are only displayed if the individual's `permissionGiven` consent flag is `true`.
-   - Clear office hours, approved contact methods, and verification timestamps.
+Explore the interactive campus map, discover events and opportunities, manage deadlines, and experience the AI-powered campus assistant.
 
-6. **Admin Verification Mock Portal**
-   - Password-gated demo portal (Demo Password: `offshore2026`).
-   - Create, edit, and archive events; toggle verification badges.
-   - Manage WhatsApp consent flags for directory contacts.
-   - Community Feedback Inbox showing user-submitted corrections from the "Report Incorrect Info" modal.
 
-7. **About & Trust Page**
-   - Transparent data verification principles and zero-tracking privacy stance.
-   - 15 comprehensive freshman FAQs.
-   - Interactive university deployment confirmation checklist.
-   - Future roadmap (3D digital twin, multi-source event sync, accessibility routing).
+## ✨ Key Features
 
----
+### 🗺️ 1. Interactive Campus Map
 
-## 🛠️ Tech Stack & Architecture
+- Explore six campus blocks using an interactive 2D map.
+- View floor plans and locate classrooms, labs, offices, and other facilities.
+- Search for rooms with autocomplete.
+- Get step-by-step walking directions with estimated distance and time.
+- Explore an experimental 3D building view.
 
-- **Frontend:** React 18, TypeScript, Tailwind CSS v4, Motion, Lucide Icons, Canvas-Confetti, Three.js
-- **Search & Retrieval:** Fuse.js for fuzzy retrieval over verified sample data
-- **AI & Server:** Node.js Express server with `@google/genai` TypeScript SDK (`gemini-3.8-flash`)
-- **Persistence:** LocalStorage for saved events, reminder preferences, theme mode, and admin overrides
-- **Designed for Backend Swap:** All data access is abstracted behind `src/services/dataService.ts`, making it straightforward to swap in Supabase (PostgreSQL) or Firebase Firestore.
+### 🎯 2. Events & Opportunities
 
----
+- Discover hackathons, workshops, seminars, internships, and college fests.
+- Filter opportunities by category, department, and registration status.
+- Save events and access official registration links.
+- View event locations directly on the campus map.
+
+### 📅 3. Calendar & Reminders
+
+- View upcoming events and registration deadlines.
+- Track saved opportunities with countdowns.
+- Export events to your calendar using `.ics` files.
+- Generate Google Calendar links.
+- Set reminder preferences and enable browser notifications.
+
+### 🤖 4. AI Campus Assistant
+
+- Ask questions about campus facilities, events, and contacts.
+- Uses verified campus records to provide relevant answers.
+- Avoids guessing unverified information and directs students to official offices when needed.
+- Supports interactive links to maps, events, and contacts.
+- Includes a local fallback for basic answers when the AI service is unavailable.
+
+### 👥 5. Faculty & Student Directory
+
+- Find faculty advisors and student club leaders.
+- View office hours and approved contact methods.
+- Display direct WhatsApp links only when permission has been granted.
+
+### 🔐 6. Admin Portal
+
+- Add, edit, and archive events.
+- Manage event verification status.
+- Update contact consent settings.
+- Review feedback and reported information.
+
+**Demo password:** `offshore2026`
+
+*Note: The admin portal is for demonstration purposes and is not intended for production security.*
+
+### ℹ️ 7. About & Trust
+
+- Learn how campus information is verified.
+- Explore frequently asked questions for new students.
+- Review privacy principles and deployment requirements.
+- Discover future improvements and planned features.
+
+## 🛠️ Tech Stack
+
+| Area                 | Technologies                          |
+| -------------------- | ------------------------------------- |
+| Frontend             | React 18, TypeScript                  |
+| Styling & UI         | Tailwind CSS v4, Motion, Lucide Icons |
+| Maps & Visualization | SVG, Three.js                         |
+| Search               | Fuse.js                               |
+| AI Assistant         | Google Gemini API, `@google/genai`    |
+| Backend              | Node.js, Express                      |
+| Data Storage         | LocalStorage                          |
+| Build Tools          | Vite                                  |
+
+The project uses a centralized data service, making it easier to integrate a database such as Supabase or Firebase in the future.
+
+## 👨‍💻 Team Offshore — Team Members & Roles
+
+| Team Member      | Role                             |
+| ---------------- | -------------------------------- |
+| Avni Gupta       | Backend Developer                |
+| Astha Yadav      | AI/ML Developer                  |
+| Bhoomi Choudhary | UI/UX Designer & Researcher      |
+| Avni Gaur        | Database Developer               |
+| Dhwani Sharma    | Frontend Developer               |
+| Himangana Mishra | Testing & Quality Assurance (QA) |
+
+**Team Offshore** is focused on building a student-friendly, accessible, and reliable digital campus experience.
+
+##
 
 ## 📂 Project Structure
 
-```
-├── server.ts                 # Full-stack Express server + Vite middlewares & Gemini API proxy
+```text
+CampusTrace/
+├── server.ts
 ├── src/
-│   ├── components/           # Reusable UI components
-│   │   ├── Navbar.tsx        # Top navigation with badges and quick actions
-│   │   ├── BottomTabBar.tsx  # Mobile-first persistent bottom bar
-│   │   ├── Footer.tsx        # Global footer with data timestamps and privacy notes
-│   │   ├── SampleDataBanner.tsx # Disclaimer banner for sample data
-│   │   ├── ReportModal.tsx   # Modal to submit data corrections
-│   │   ├── OnboardingModal.tsx # 3-step introductory tour for students
-│   │   ├── ThreeDBuildingModal.tsx # Three.js 3D building viewer
-│   │   └── Toast.tsx         # Notification alerts
-│   ├── context/
-│   │   └── AppContext.tsx    # App-wide state (tabs, bookmarks, theme, navigation)
-│   ├── data/                 # Separated, easy-to-edit campus sample files
-│   │   ├── buildings.ts      # 6 buildings, 18 SVG floor plans, 35+ rooms, walking routes
-│   │   ├── events.ts         # 20 events across all campus categories
-│   │   ├── contacts.ts       # 12 verified faculty and student leads
-│   │   └── faq.ts            # 15 freshman campus FAQs
-│   ├── pages/
-│   │   ├── HomePage.tsx      # Unified search, quick links, deadlines, carousel
-│   │   ├── CampusMapPage.tsx # SVG campus map, interactive floor plans, walking directions
-│   │   ├── EventsPage.tsx    # Filterable opportunities hub & event detail modal
-│   │   ├── CalendarPage.tsx  # Month calendar, deadline colors, .ics export
-│   │   ├── AssistantPage.tsx # Grounded chat assistant with map action chips
-│   │   ├── ContactsPage.tsx  # Verified faculty & student leads directory
-│   │   ├── AdminPage.tsx     # Mock admin portal for events, consent, reports
-│   │   └── AboutPage.tsx     # Trust policy, production checklist, roadmap, FAQs
-│   ├── services/
-│   │   ├── dataService.ts    # Centralized data access & fuzzy retrieval
-│   │   ├── geminiService.ts  # Grounded Gemini assistant client & local fallback
-│   │   └── calendarExport.ts # .ics file generator & Google Calendar URLs
-│   ├── types/
-│   │   └── index.ts          # Relational-ready TypeScript domain models
-│   ├── App.tsx               # Main application layout
-│   ├── index.css             # Tailwind CSS & custom styling
-│   └── main.tsx              # React DOM entry point
+│   ├── components/    # Reusable UI components
+│   ├── context/       # Application state management
+│   ├── data/          # Campus buildings, events, contacts, FAQs
+│   ├── pages/         # Main application pages
+│   ├── services/      # Data, AI, and calendar services
+│   ├── types/         # TypeScript types
+│   ├── App.tsx
+│   ├── index.css
+│   └── main.tsx
+├── .env.example
+├── package.json
+└── README.md
 ```
 
----
+## 🔄 Using Real Campus Data
 
-## 🚀 Getting Started
+CampusTrace currently uses sample campus data for demonstration. Before deploying it at a real university, replace the sample records in `src/data/` with verified information.
 
-### 1. Install Dependencies
-```bash
-npm install
-```
+- **Buildings:** Add official building names, floor plans, room details, and walking routes.
+- **Events:** Add confirmed event dates, eligibility requirements, venues, and official registration links.
+- **Contacts:** Include verified faculty and student details only with appropriate consent.
+- **FAQs:** Use official university handbooks and trusted university sources.
 
-### 2. Configure Environment Variables
-Copy `.env.example` to `.env`:
-```bash
-# GEMINI_API_KEY: In AI Studio this is automatically injected via the Secrets panel.
-GEMINI_API_KEY="your-gemini-api-key-here"
-```
+The centralized `src/services/dataService.ts` helps manage data access and supports future database integration.
 
-### 3. Run Development Server
-```bash
-npm run dev
-```
-The application will start on `http://localhost:3000`.
+## 🔒 Privacy & Verification
 
----
+CampusTrace is designed with student privacy and information accuracy in mind.
 
-## 🔄 How to Replace Sample Data with Real Campus Data
+- Only use verified campus information wherever possible.
+- Obtain appropriate permission before publishing personal contact details.
+- Keep API keys and sensitive credentials out of public repositories.
+- Review the AI assistant's answers and grounding data before deployment.
+- Use proper authentication and authorization before introducing a production admin portal.
 
-All campus records are isolated in the `/src/data/` directory so university administrators can update them without altering component logic:
+## ✅ Before University Deployment
 
-1. **Buildings & Floor Plans (`src/data/buildings.ts`):**
-   - Update `SAMPLE_BUILDINGS` array with real building names, categories, GPS/relative coordinates, open hours, and rooms.
-   - For floor plans, define room polygons in the `svgPolygon` attribute using coordinate tuples (`"x1,y1 x2,y2 x3,y3 x4,y4"`).
-   - Add walking routes to `SAMPLE_CAMPUS_ROUTES` with turn-by-turn text instructions.
+Before making CampusTrace available to students:
 
-2. **Campus Events (`src/data/events.ts`):**
-   - Populate `SAMPLE_EVENTS` with official dates, descriptions, venues, eligibility, and registration URLs.
+- [ ] Obtain permission to publish campus maps and indoor floor plans.
+- [ ] Establish a process for verifying and updating events.
+- [ ] Obtain consent for publishing faculty and student contact details.
+- [ ] Confirm whether official university APIs can be integrated.
+- [ ] Test calendar exports and reminder functionality.
+- [ ] Verify AI responses against official campus records.
+- [ ] Add secure authentication and database-backed storage.
+- [ ] Test accessibility, mobile responsiveness, and overall usability.
 
-3. **Faculty & Student Contacts (`src/data/contacts.ts`):**
-   - Populate `SAMPLE_CONTACTS`. Ensure `permissionGiven: true` is only assigned when explicit written consent for public communication exists.
+## 🔮 Future Scope
 
-4. **Freshman FAQs (`src/data/faq.ts`):**
-   - Update `SAMPLE_FAQS` with verified university handbook answers and official source links.
+- Real-time campus data synchronization.
+- Integration with university ERP and official information systems.
+- Secure cloud database and authentication.
+- Improved accessibility and navigation routes.
+- Advanced 3D campus visualization.
+- More reliable push notifications and event updates.
 
----
+## ❤️ Our Mission
 
-## ✅ "What Needs to be Confirmed" University Checklist
+**CampusTrace aims to make university life simpler by bringing campus navigation, opportunities, important deadlines, and trusted information together in one accessible platform.**
 
-Before replacing sample data and publishing CampusTrace for student use, confirm the following with university stakeholders:
-
-- [ ] **Campus Floor Plans & CAD Permissions:** Obtain formal written clearance from the University Estates Directorate to publish interior room floor plans and emergency exit paths.
-- [ ] **Event Verification Committee:** Designate student union officers and faculty liaisons responsible for approving and archiving hackathons, workshops, and audition deadlines.
-- [ ] **Contact-Publishing Consent:** Secure signed or digital consent forms from faculty members and student club leaders before listing contact numbers or WhatsApp hotlines.
-- [ ] **Official University ERP/Feeds:** Assess if official APIs (LDAP, student information system, library room reservation software) can be connected via `src/services/dataService.ts`.
-- [ ] **Calendar & Push Delivery Feasibility:** Determine whether students prefer direct iCalendar `.ics` downloads, Google Calendar web links, or browser Web Push / SMS notifications.
-- [ ] **AI Assistant Data Boundaries:** Audit the grounding dataset so that the assistant only answers verified questions and safely refers students to physical desks for unverified queries.
+*Built with care by Team Offshore.*
